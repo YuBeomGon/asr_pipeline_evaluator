@@ -1,0 +1,398 @@
+openapi: 3.1.0
+info:
+  title: ASR Serving Pipeline API
+  description: |
+    Production-oriented ASR (Automatic Speech Recognition) serving pipeline API.
+    Supports audio transcription with Korean language focus, CER evaluation,
+    Prometheus metrics, and structured observability.
+  version: 1.0.0
+  contact:
+    name: ASR Pipeline Team
+servers:
+  - url: http://localhost:8000
+    description: Local development server
+
+tags:
+  - name: health
+    description: Health check endpoints
+  - name: transcription
+    description: Audio transcription endpoints
+  - name: evaluation
+    description: CER evaluation endpoints
+  - name: metrics
+    description: Prometheus metrics
+
+paths:
+  /healthz:
+    get:
+      tags: [health]
+      operationId: healthCheck
+      summary: Health check
+      description: Returns service health status. Use for liveness and readiness probes.
+      responses:
+        "200":
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+              example:
+                status: ok
+
+  /metrics:
+    get:
+      tags: [metrics]
+      operationId: prometheusMetrics
+      summary: Prometheus metrics
+      description: |
+        Returns Prometheus text exposition format metrics.
+        Minimum metrics included:
+        - asr_requests_total (counter, labels: status)
+        - asr_request_duration_seconds (histogram)
+        - asr_errors_total (counter)
+      responses:
+        "200":
+          description: Prometheus text exposition format
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: |
+                # HELP asr_requests_total Total ASR requests
+                # TYPE asr_requests_total counter
+                asr_requests_total{status="success"} 42
+                # HELP asr_request_duration_seconds ASR request duration histogram
+                # TYPE asr_request_duration_seconds histogram
+                asr_request_duration_seconds_bucket{le="0.1"} 10
+                # HELP asr_errors_total Total ASR errors
+                # TYPE asr_errors_total counter
+                asr_errors_total 0
+
+  /transcribe:
+    post:
+      tags: [transcription]
+      operationId: transcribeAudio
+      summary: Transcribe audio file
+      description: |
+        Accepts an audio file upload and returns the transcription result.
+        Audio is preprocessed (resampled to 16kHz mono) before inference.
+        Transcript undergoes NFC normalization for Korean text.
+        Each request receives a unique request_id (req_<UUID4>).
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required: [file]
+              properties:
+                file:
+                  type: string
+                  format: binary
+                  description: Audio file (WAV, MP3, FLAC, OGG supported)
+      responses:
+        "200":
+          description: Transcription successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TranscribeResponse"
+              example:
+                request_id: "req_550e8400-e29b-41d4-a716-446655440000"
+                transcript: "안녕하세요 반갑습니다"
+                confidence: 0.98
+                audio_duration_seconds: 2.35
+                timing:
+                  preprocess_ms: 5.2
+                  inference_ms: 42.1
+                  postprocess_ms: 1.3
+                  total_ms: 48.6
+                model:
+                  backend: mock
+                  name: mock-asr
+                  version: "0.1.0"
+        "400":
+          description: Invalid audio file or request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "413":
+          description: Audio file too large
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "422":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /eval/cer:
+    post:
+      tags: [evaluation]
+      operationId: evaluateCER
+      summary: Compute Character Error Rate
+      description: |
+        Computes Character Error Rate (CER) for reference/hypothesis pairs.
+        CER = (substitutions + deletions + insertions) / reference_character_count
+        Normalization applied: Unicode NFKC -> lowercase -> trim/collapse whitespace -> remove spaces before char-level scoring.
+        Returns per-sample CER and aggregate statistics.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CERRequest"
+            example:
+              pairs:
+                - id: "sample_001"
+                  reference: "안녕하세요 반갑습니다"
+                  hypothesis: "안녕하세요 반갑습니다"
+                - id: "sample_002"
+                  reference: "오늘 날씨가 좋네요"
+                  hypothesis: "오늘 날씨가 좋아요"
+      responses:
+        "200":
+          description: CER evaluation results
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CERResponse"
+              example:
+                results:
+                  - id: "sample_001"
+                    reference: "안녕하세요반갑습니다"
+                    hypothesis: "안녕하세요반갑습니다"
+                    cer: 0.0
+                    substitutions: 0
+                    deletions: 0
+                    insertions: 0
+                    reference_length: 9
+                  - id: "sample_002"
+                    reference: "오늘날씨가좋네요"
+                    hypothesis: "오늘날씨가좋아요"
+                    cer: 0.25
+                    substitutions: 2
+                    deletions: 0
+                    insertions: 0
+                    reference_length: 8
+                aggregate:
+                  mean_cer: 0.125
+                  total_substitutions: 2
+                  total_deletions: 0
+                  total_insertions: 0
+                  total_reference_length: 17
+                  total_samples: 2
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "422":
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+components:
+  schemas:
+    HealthResponse:
+      type: object
+      required: [status]
+      properties:
+        status:
+          type: string
+          enum: [ok, degraded, error]
+          description: Service health status
+      example:
+        status: ok
+
+    TimingInfo:
+      type: object
+      required: [preprocess_ms, inference_ms, postprocess_ms, total_ms]
+      properties:
+        preprocess_ms:
+          type: number
+          format: float
+          description: Audio preprocessing time in milliseconds
+          minimum: 0
+        inference_ms:
+          type: number
+          format: float
+          description: ASR inference time in milliseconds
+          minimum: 0
+        postprocess_ms:
+          type: number
+          format: float
+          description: Transcript postprocessing time in milliseconds
+          minimum: 0
+        total_ms:
+          type: number
+          format: float
+          description: Total end-to-end time in milliseconds
+          minimum: 0
+
+    ModelInfo:
+      type: object
+      required: [backend, name, version]
+      properties:
+        backend:
+          type: string
+          description: ASR backend identifier (e.g., "mock", "whisper", "nemo")
+        name:
+          type: string
+          description: Model name
+        version:
+          type: string
+          description: Model version string
+
+    TranscribeResponse:
+      type: object
+      required: [request_id, transcript, confidence, audio_duration_seconds, timing, model]
+      properties:
+        request_id:
+          type: string
+          pattern: "^req_[0-9a-f-]{36}$"
+          description: Unique request identifier (req_<UUID4>)
+        transcript:
+          type: string
+          description: Recognized and normalized transcript text
+        confidence:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+          description: Confidence score [0, 1]
+        audio_duration_seconds:
+          type: number
+          format: float
+          minimum: 0
+          description: Duration of the audio in seconds
+        timing:
+          $ref: "#/components/schemas/TimingInfo"
+        model:
+          $ref: "#/components/schemas/ModelInfo"
+
+    CERPair:
+      type: object
+      required: [id, reference, hypothesis]
+      properties:
+        id:
+          type: string
+          description: Sample identifier
+        reference:
+          type: string
+          description: Ground truth transcript
+        hypothesis:
+          type: string
+          description: ASR output to evaluate
+
+    CERRequest:
+      type: object
+      required: [pairs]
+      properties:
+        pairs:
+          type: array
+          items:
+            $ref: "#/components/schemas/CERPair"
+          minItems: 1
+          description: List of reference/hypothesis pairs to evaluate
+
+    CERSampleResult:
+      type: object
+      required: [id, reference, hypothesis, cer, substitutions, deletions, insertions, reference_length]
+      properties:
+        id:
+          type: string
+          description: Sample identifier
+        reference:
+          type: string
+          description: Normalized reference string (after NFKC + lowercase + whitespace collapse + space removal)
+        hypothesis:
+          type: string
+          description: Normalized hypothesis string
+        cer:
+          type: number
+          format: float
+          minimum: 0
+          description: Character Error Rate for this sample
+        substitutions:
+          type: integer
+          minimum: 0
+          description: Number of character substitutions
+        deletions:
+          type: integer
+          minimum: 0
+          description: Number of character deletions
+        insertions:
+          type: integer
+          minimum: 0
+          description: Number of character insertions
+        reference_length:
+          type: integer
+          minimum: 0
+          description: Reference character count after normalization
+
+    CERAggregate:
+      type: object
+      required: [mean_cer, total_substitutions, total_deletions, total_insertions, total_reference_length, total_samples]
+      properties:
+        mean_cer:
+          type: number
+          format: float
+          minimum: 0
+          description: Mean CER across all samples
+        total_substitutions:
+          type: integer
+          minimum: 0
+        total_deletions:
+          type: integer
+          minimum: 0
+        total_insertions:
+          type: integer
+          minimum: 0
+        total_reference_length:
+          type: integer
+          minimum: 0
+        total_samples:
+          type: integer
+          minimum: 0
+
+    CERResponse:
+      type: object
+      required: [results, aggregate]
+      properties:
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/CERSampleResult"
+        aggregate:
+          $ref: "#/components/schemas/CERAggregate"
+
+    ErrorResponse:
+      type: object
+      required: [detail]
+      properties:
+        detail:
+          type: string
+          description: Human-readable error description
+        request_id:
+          type: string
+          description: Request ID if available

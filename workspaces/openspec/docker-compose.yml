@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  asr-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: openspec-asr:latest
+    container_name: openspec-asr
+    ports:
+      - "8000:8000"
+    environment:
+      ASR_BACKEND: mock
+      ASR_LOG_LEVEL: INFO
+      ASR_LOG_FORMAT: json
+      ASR_DEBUG: "false"
+      ASR_MOCK_TRANSCRIPT: "안녕하세요 반갑습니다"
+      ASR_MOCK_CONFIDENCE: "0.95"
+      ASR_MOCK_INFERENCE_DELAY_MS: "10.0"
+      ASR_TARGET_SAMPLE_RATE: "16000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    volumes:
+      # Mount for manifest-based CER evaluation
+      - ./audio:/app/audio:ro

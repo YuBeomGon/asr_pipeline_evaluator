@@ -1,0 +1,27 @@
+# ASR Serving Pipeline - docker-compose
+# Spec ref: .specify/asr-pipeline-spec.md § FR-014
+
+version: "3.9"
+
+services:
+  asr-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: asr-pipeline-spec-kit:0.1.0
+    container_name: asr-pipeline-api
+    ports:
+      - "8000:8000"
+    environment:
+      - ASR_LOG_LEVEL=INFO
+      - ASR_BACKEND=mock
+      - ASR_MOCK_TRANSCRIPT=안녕하세요 테스트 음성입니다
+      - ASR_MOCK_CONFIDENCE=0.98
+      - ASR_TARGET_SAMPLE_RATE=16000
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/healthz')"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped

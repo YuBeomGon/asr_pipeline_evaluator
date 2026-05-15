@@ -1,0 +1,3034 @@
+{
+  "results": [
+    {
+      "target": "/home/beomgon/side/asr-pipeline-evaluator/outputs/spec-kit",
+      "total_score": 100.0,
+      "weights": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "category_scores": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "raw_category_points": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "raw_category_max": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "evidence": [
+        {
+          "category": "functionality",
+          "points": 5,
+          "max_points": 5,
+          "reason": "transcription endpoint or handler",
+          "files": [
+            ".specify/asr-pipeline-spec.md",
+            "README.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "src/api/routes.py",
+            "src/api/schemas.py",
+            "src/backends/base.py",
+            "src/backends/mock.py"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "audio upload/input handling",
+          "files": [
+            ".specify/asr-pipeline-spec.md",
+            "README.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "requirements.txt",
+            "src/api/routes.py",
+            "src/audio/preprocessing.py"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 4,
+          "max_points": 4,
+          "reason": "ASR backend abstraction",
+          "files": [
+            ".specify/asr-pipeline-spec.md",
+            "README.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "src/api/main.py",
+            "src/api/routes.py",
+            "src/backends/__init__.py",
+            "src/backends/base.py",
+            "src/backends/mock.py"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "response schema includes transcript/confidence/request/timing fields",
+          "files": [
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "error handling paths",
+          "files": [
+            ".claude/skills/speckit-analyze/SKILL.md",
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".claude/skills/speckit-constitution/SKILL.md",
+            ".claude/skills/speckit-implement/SKILL.md",
+            ".claude/skills/speckit-plan/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            ".specify/memory/constitution.md",
+            ".specify/scripts/bash/check-prerequisites.sh"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "configuration/env management",
+          "files": [
+            ".claude/skills/speckit-implement/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            ".claude/skills/speckit-taskstoissues/SKILL.md",
+            ".specify/integration.json",
+            ".specify/scripts/bash/common.sh",
+            ".specify/scripts/bash/create-new-feature.sh",
+            ".specify/templates/tasks-template.md",
+            "README.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "preprocessing layer",
+          "files": [
+            ".specify/asr-pipeline-spec.md",
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "src/api/routes.py",
+            "src/api/schemas.py",
+            "src/audio/preprocessing.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "chunking/batching/VAD consideration",
+          "files": [
+            ".specify/asr-pipeline-spec.md",
+            "README.md",
+            "docs/architecture.md",
+            "docs/runbook.md",
+            "src/api/routes.py",
+            "src/audio/preprocessing.py",
+            "src/eval/cer.py",
+            "src/eval/cer_runner.py",
+            "tests/unit/test_audio_preprocessing.py",
+            "tests/unit/test_cer.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "model adapter boundary",
+          "files": [
+            ".specify/asr-pipeline-spec.md",
+            "README.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "src/api/main.py",
+            "src/api/routes.py",
+            "src/backends/__init__.py",
+            "src/backends/base.py",
+            "src/backends/mock.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "postprocessing/transcript normalization",
+          "files": [
+            ".specify/asr-pipeline-spec.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "src/api/routes.py",
+            "src/api/schemas.py",
+            "src/audio/postprocessing.py",
+            "src/backends/base.py",
+            "src/backends/mock.py",
+            "tests/integration/test_api.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "async/queue/streaming extensibility",
+          "files": [
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            ".specify/templates/spec-template.md",
+            "docs/implementation_scope.md",
+            "pytest.ini",
+            "requirements.txt",
+            "src/api/main.py",
+            "src/api/routes.py",
+            "src/observability/logging.py"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 5,
+          "max_points": 5,
+          "reason": "CER calculation implementation/reference",
+          "files": [
+            ".specify/asr-pipeline-spec.md",
+            "README.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "src/api/main.py",
+            "src/api/routes.py",
+            "src/api/schemas.py"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 3,
+          "max_points": 3,
+          "reason": "manifest/reference/hypothesis support",
+          "files": [
+            ".claude/skills/speckit-analyze/SKILL.md",
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".claude/skills/speckit-constitution/SKILL.md",
+            ".claude/skills/speckit-plan/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            ".specify/integrations/claude.manifest.json",
+            ".specify/integrations/speckit.manifest.json",
+            ".specify/scripts/bash/common.sh"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 3,
+          "max_points": 3,
+          "reason": "explicit CER normalization policy",
+          "files": [
+            ".claude/skills/speckit-analyze/SKILL.md",
+            ".claude/skills/speckit-constitution/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            ".specify/scripts/bash/common.sh",
+            ".specify/scripts/bash/create-new-feature.sh",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "src/audio/postprocessing.py",
+            "src/eval/cer.py"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 2,
+          "max_points": 2,
+          "reason": "per-sample and aggregate metrics",
+          "files": [
+            ".claude/skills/speckit-analyze/SKILL.md",
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".claude/skills/speckit-constitution/SKILL.md",
+            ".claude/skills/speckit-implement/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            ".claude/skills/speckit-tasks/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            ".specify/templates/plan-template.md",
+            "docs/eval_protocol.md"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 2,
+          "max_points": 2,
+          "reason": "CER failure/edge-case handling",
+          "files": [
+            ".claude/skills/speckit-analyze/SKILL.md",
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".claude/skills/speckit-constitution/SKILL.md",
+            ".claude/skills/speckit-implement/SKILL.md",
+            ".claude/skills/speckit-plan/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            ".claude/skills/speckit-tasks/SKILL.md",
+            ".claude/skills/speckit-taskstoissues/SKILL.md",
+            ".specify/asr-pipeline-spec.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "API schema/OpenAPI clarity",
+          "files": [
+            ".claude/skills/speckit-plan/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            ".specify/integration.json",
+            ".specify/memory/constitution.md",
+            ".specify/templates/constitution-template.md",
+            ".specify/templates/plan-template.md",
+            ".specify/templates/tasks-template.md",
+            ".specify/workflows/speckit/workflow.yml",
+            ".specify/workflows/workflow-registry.json",
+            "docs/architecture.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "latency measurement",
+          "files": [
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/runbook.md",
+            "src/api/routes.py",
+            "src/api/schemas.py",
+            "src/audio/preprocessing.py",
+            "src/backends/base.py"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "concurrency consideration",
+          "files": [
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            ".specify/templates/spec-template.md",
+            "pytest.ini",
+            "requirements.txt",
+            "src/api/main.py",
+            "src/api/routes.py"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "timeout/retry/backoff",
+          "files": [
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            "docker-compose.yml"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "streaming extension path",
+          "files": [
+            ".claude/skills/speckit-analyze/SKILL.md",
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".claude/skills/speckit-implement/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            ".specify/scripts/bash/create-new-feature.sh",
+            ".specify/templates/spec-template.md",
+            "docs/implementation_scope.md",
+            "src/audio/preprocessing.py"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "health and metrics endpoints",
+          "files": [
+            ".specify/asr-pipeline-spec.md",
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "requirements.txt",
+            "src/api/routes.py",
+            "src/api/schemas.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 3,
+          "max_points": 3,
+          "reason": "unit tests",
+          "files": [
+            "tests/__init__.py",
+            "tests/integration/conftest.py",
+            "tests/unit/test_cer.py",
+            "tests/integration/__init__.py",
+            "tests/integration/test_api.py",
+            "tests/eval/__init__.py",
+            "tests/unit/__init__.py",
+            "tests/unit/test_audio_preprocessing.py",
+            "tests/unit/test_normalization.py",
+            "tests/eval/test_cer_runner.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 3,
+          "max_points": 3,
+          "reason": "integration/API tests",
+          "files": [
+            "tests/__init__.py",
+            "tests/integration/conftest.py",
+            "tests/unit/test_cer.py",
+            "tests/integration/__init__.py",
+            "tests/integration/test_api.py",
+            "tests/eval/__init__.py",
+            "tests/unit/__init__.py",
+            "tests/unit/test_audio_preprocessing.py",
+            "tests/unit/test_normalization.py",
+            "tests/eval/test_cer_runner.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 2,
+          "max_points": 2,
+          "reason": "eval smoke tests",
+          "files": [
+            ".specify/asr-pipeline-spec.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "tests/eval/test_cer_runner.py",
+            "tests/integration/test_api.py",
+            "tests/unit/test_cer.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 2,
+          "max_points": 2,
+          "reason": "CI-ready test command",
+          "files": [
+            ".claude/skills/speckit-analyze/SKILL.md",
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".claude/skills/speckit-constitution/SKILL.md",
+            ".claude/skills/speckit-implement/SKILL.md",
+            ".claude/skills/speckit-plan/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            ".claude/skills/speckit-tasks/SKILL.md",
+            ".claude/skills/speckit-taskstoissues/SKILL.md",
+            ".specify/asr-pipeline-spec.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 3,
+          "max_points": 3,
+          "reason": "Docker or compose support",
+          "files": [
+            ".claude/skills/speckit-implement/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            ".specify/scripts/bash/common.sh",
+            "Dockerfile",
+            "README.md",
+            "docker-compose.yml",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "src/config/settings.py"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 2,
+          "max_points": 2,
+          "reason": "structured logging/request tracing",
+          "files": [
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".claude/skills/speckit-implement/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            ".specify/memory/constitution.md",
+            ".specify/templates/constitution-template.md",
+            ".specify/templates/tasks-template.md",
+            "README.md",
+            "docs/api.md",
+            "docs/architecture.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 2,
+          "max_points": 2,
+          "reason": "metrics",
+          "files": [
+            ".claude/skills/speckit-analyze/SKILL.md",
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            "README.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 2,
+          "max_points": 2,
+          "reason": "deployment/runbook",
+          "files": [
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-implement/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            ".specify/memory/constitution.md",
+            ".specify/templates/constitution-template.md",
+            ".specify/templates/spec-template.md",
+            ".specify/templates/tasks-template.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 1,
+          "max_points": 1,
+          "reason": "rollback/fallback consideration",
+          "files": [
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            ".specify/scripts/bash/common.sh",
+            ".specify/scripts/bash/create-new-feature.sh",
+            ".specify/templates/spec-template.md",
+            "README.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "src/api/main.py"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 3,
+          "max_points": 3,
+          "reason": "module boundaries",
+          "files": [
+            "src/observability/logging.py",
+            "src/api/schemas.py",
+            "src/eval/cer.py",
+            "src/observability/metrics.py",
+            "src/api/__init__.py",
+            "src/config/__init__.py",
+            "src/backends/base.py",
+            "src/api/routes.py",
+            "src/audio/preprocessing.py",
+            "src/backends/mock.py"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 2,
+          "max_points": 2,
+          "reason": "configuration separation",
+          "files": [
+            ".claude/skills/speckit-analyze/SKILL.md",
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".claude/skills/speckit-constitution/SKILL.md",
+            ".claude/skills/speckit-implement/SKILL.md",
+            ".claude/skills/speckit-plan/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            ".claude/skills/speckit-tasks/SKILL.md",
+            ".claude/skills/speckit-taskstoissues/SKILL.md",
+            ".specify/asr-pipeline-spec.md"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 2,
+          "max_points": 2,
+          "reason": "dependency management",
+          "files": [
+            "requirements.txt"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 2,
+          "max_points": 2,
+          "reason": "basic code organization/simplicity",
+          "files": [
+            "src/observability/logging.py",
+            "tests/__init__.py",
+            "tests/integration/conftest.py",
+            "src/api/schemas.py",
+            "src/eval/cer.py",
+            "src/observability/metrics.py",
+            "src/api/__init__.py",
+            "tests/unit/test_cer.py",
+            "tests/integration/__init__.py",
+            "src/config/__init__.py"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 1,
+          "max_points": 1,
+          "reason": "model/vendor replacement path",
+          "files": [
+            ".specify/asr-pipeline-spec.md",
+            ".specify/templates/plan-template.md",
+            ".specify/templates/tasks-template.md",
+            ".specify/workflows/speckit/workflow.yml",
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "architecture documentation",
+          "files": [
+            "docs/architecture.md",
+            "README.md",
+            "docs/runbook.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "eval protocol",
+          "files": [
+            ".claude/skills/speckit-analyze/SKILL.md",
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".claude/skills/speckit-constitution/SKILL.md",
+            ".claude/skills/speckit-plan/SKILL.md",
+            ".claude/skills/speckit-specify/SKILL.md",
+            ".claude/skills/speckit-tasks/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            ".specify/templates/checklist-template.md",
+            ".specify/templates/plan-template.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "API usage examples",
+          "files": [
+            ".claude/skills/speckit-checklist/SKILL.md",
+            ".claude/skills/speckit-tasks/SKILL.md",
+            ".specify/asr-pipeline-spec.md",
+            ".specify/scripts/bash/check-prerequisites.sh",
+            ".specify/templates/checklist-template.md",
+            ".specify/templates/tasks-template.md",
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "implementation scope documentation",
+          "files": [
+            ".specify/asr-pipeline-spec.md",
+            ".specify/templates/spec-template.md",
+            "docs/implementation_scope.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "known limitations",
+          "files": [
+            ".claude/skills/speckit-analyze/SKILL.md",
+            ".claude/skills/speckit-clarify/SKILL.md",
+            ".claude/skills/speckit-constitution/SKILL.md"
+          ]
+        }
+      ],
+      "file_count_scanned": 67,
+      "label": "spec-kit",
+      "pytest": {
+        "available": true,
+        "passed": true,
+        "returncode": 0,
+        "command": "/home/beomgon/side/asr-pipeline-evaluator/outputs/spec-kit/.venv/bin/python -m pytest -q",
+        "stdout_tail": "============================= test session starts ==============================\nplatform linux -- Python 3.8.10, pytest-8.2.0, pluggy-1.5.0\nrootdir: /home/beomgon/side/asr-pipeline-evaluator/outputs/spec-kit\nconfigfile: pytest.ini\ntestpaths: tests\nplugins: asyncio-0.23.7, anyio-4.5.2\nasyncio: mode=auto\ncollected 71 items\n\ntests/eval/test_cer_runner.py ..........                                 [ 14%]\ntests/integration/test_api.py ........................                   [ 47%]\ntests/unit/test_audio_preprocessing.py ......                            [ 56%]\ntests/unit/test_cer.py .......................                           [ 88%]\ntests/unit/test_normalization.py ........                                [100%]\n\n=============================== warnings summary ===============================\ntests/eval/test_cer_runner.py::TestCERRunnerCLI::test_empty_reference_excluded_from_aggregate\n  /home/beomgon/side/asr-pipeline-evaluator/outputs/spec-kit/src/eval/cer_runner.py:129: UserWarning: Sample 's001' has empty reference; will be excluded from aggregate CER.\n    pairs = load_manifest(args.manifest)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n======================== 71 passed, 1 warning in 2.05s =========================\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "target": "/home/beomgon/side/asr-pipeline-evaluator/outputs/openspec",
+      "total_score": 100.0,
+      "weights": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "category_scores": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "raw_category_points": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "raw_category_max": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "evidence": [
+        {
+          "category": "functionality",
+          "points": 5,
+          "max_points": 5,
+          "reason": "transcription endpoint or handler",
+          "files": [
+            "README.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "openapi.yaml",
+            "src/api/routes/transcribe.py",
+            "src/backends/base.py",
+            "src/backends/mock.py",
+            "tests/integration/test_transcribe.py"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "audio upload/input handling",
+          "files": [
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "openapi.yaml",
+            "requirements.txt",
+            "src/api/routes/transcribe.py",
+            "src/audio/preprocessing.py",
+            "src/eval/cer_runner.py"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 4,
+          "max_points": 4,
+          "reason": "ASR backend abstraction",
+          "files": [
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "src/api/routes/transcribe.py",
+            "src/backends/__init__.py",
+            "src/backends/base.py",
+            "src/backends/mock.py",
+            "src/backends/registry.py",
+            "src/config/settings.py",
+            "tests/unit/test_backends.py"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "response schema includes transcript/confidence/request/timing fields",
+          "files": [
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "openapi.yaml",
+            "src/api/postprocessing.py",
+            "src/api/routes/eval_cer.py"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "error handling paths",
+          "files": [
+            ".claude/commands/opsx/apply.md",
+            ".claude/commands/opsx/archive.md",
+            ".claude/skills/openspec-apply-change/SKILL.md",
+            ".claude/skills/openspec-archive-change/SKILL.md",
+            "Dockerfile",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/runbook.md",
+            "openapi.yaml"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "configuration/env management",
+          "files": [
+            "README.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "requirements.txt",
+            "src/api/main.py",
+            "src/api/routes/transcribe.py",
+            "src/api/schemas.py",
+            "src/backends/mock.py",
+            "src/backends/registry.py",
+            "src/config/__init__.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "preprocessing layer",
+          "files": [
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "openapi.yaml",
+            "src/api/routes/transcribe.py",
+            "src/api/schemas.py",
+            "src/audio/__init__.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "chunking/batching/VAD consideration",
+          "files": [
+            "README.md",
+            "docs/architecture.md",
+            "docs/runbook.md",
+            "src/api/routes/eval_cer.py",
+            "src/eval/cer.py",
+            "src/eval/cer_runner.py",
+            "tests/unit/test_cer.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "model adapter boundary",
+          "files": [
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "openapi.yaml",
+            "src/api/routes/transcribe.py",
+            "src/backends/__init__.py",
+            "src/backends/base.py",
+            "src/backends/mock.py",
+            "src/backends/registry.py",
+            "src/config/settings.py",
+            "tests/unit/test_backends.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "postprocessing/transcript normalization",
+          "files": [
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "openapi.yaml",
+            "src/api/postprocessing.py",
+            "src/api/routes/transcribe.py",
+            "src/api/schemas.py",
+            "src/backends/base.py",
+            "tests/integration/test_transcribe.py",
+            "tests/unit/test_cer.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "async/queue/streaming extensibility",
+          "files": [
+            "docs/implementation_scope.md",
+            "requirements.txt",
+            "src/api/main.py",
+            "src/api/routes/eval_cer.py",
+            "src/api/routes/health.py",
+            "src/api/routes/metrics.py",
+            "src/api/routes/transcribe.py",
+            "src/observability/logging.py"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 5,
+          "max_points": 5,
+          "reason": "CER calculation implementation/reference",
+          "files": [
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "openapi.yaml",
+            "src/api/main.py",
+            "src/api/routes/eval_cer.py"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 3,
+          "max_points": 3,
+          "reason": "manifest/reference/hypothesis support",
+          "files": [
+            ".claude/commands/opsx/explore.md",
+            ".claude/skills/openspec-explore/SKILL.md",
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "openapi.yaml"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 3,
+          "max_points": 3,
+          "reason": "explicit CER normalization policy",
+          "files": [
+            "README.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "openapi.yaml",
+            "src/api/main.py",
+            "src/api/postprocessing.py",
+            "src/api/routes/eval_cer.py",
+            "src/eval/cer.py",
+            "tests/unit/test_cer.py"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 2,
+          "max_points": 2,
+          "reason": "per-sample and aggregate metrics",
+          "files": [
+            ".claude/commands/opsx/archive.md",
+            ".claude/commands/opsx/explore.md",
+            ".claude/skills/openspec-archive-change/SKILL.md",
+            ".claude/skills/openspec-explore/SKILL.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "openapi.yaml",
+            "src/api/routes/eval_cer.py",
+            "src/api/schemas.py"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 2,
+          "max_points": 2,
+          "reason": "CER failure/edge-case handling",
+          "files": [
+            ".claude/commands/opsx/apply.md",
+            ".claude/commands/opsx/explore.md",
+            ".claude/skills/openspec-apply-change/SKILL.md",
+            ".claude/skills/openspec-explore/SKILL.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/runbook.md",
+            "openapi.yaml",
+            "src/api/routes/transcribe.py"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "API schema/OpenAPI clarity",
+          "files": [
+            ".claude/commands/opsx/apply.md",
+            ".claude/commands/opsx/archive.md",
+            ".claude/commands/opsx/explore.md",
+            ".claude/commands/opsx/propose.md",
+            ".claude/skills/openspec-apply-change/SKILL.md",
+            ".claude/skills/openspec-archive-change/SKILL.md",
+            ".claude/skills/openspec-explore/SKILL.md",
+            ".claude/skills/openspec-propose/SKILL.md",
+            "README.md",
+            "docs/api.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "latency measurement",
+          "files": [
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/runbook.md",
+            "openapi.yaml",
+            "src/api/routes/transcribe.py",
+            "src/api/schemas.py",
+            "src/audio/preprocessing.py",
+            "src/backends/mock.py",
+            "src/config/settings.py",
+            "src/observability/metrics.py"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "concurrency consideration",
+          "files": [
+            "requirements.txt",
+            "src/api/main.py",
+            "src/api/routes/eval_cer.py",
+            "src/api/routes/health.py",
+            "src/api/routes/metrics.py",
+            "src/api/routes/transcribe.py",
+            "src/observability/logging.py"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "timeout/retry/backoff",
+          "files": [
+            "Dockerfile",
+            "docker-compose.yml"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "streaming extension path",
+          "files": [
+            ".claude/commands/opsx/archive.md",
+            ".claude/skills/openspec-archive-change/SKILL.md",
+            "docs/implementation_scope.md",
+            "openapi.yaml",
+            "pytest.ini",
+            "src/api/routes/transcribe.py",
+            "src/audio/preprocessing.py",
+            "src/backends/base.py",
+            "src/eval/cer.py",
+            "src/observability/logging.py"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "health and metrics endpoints",
+          "files": [
+            "Dockerfile",
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "openapi.yaml",
+            "requirements.txt",
+            "src/api/routes/health.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 3,
+          "max_points": 3,
+          "reason": "unit tests",
+          "files": [
+            "tests/unit/test_backends.py",
+            "tests/__init__.py",
+            "tests/integration/test_eval_cer.py",
+            "tests/integration/conftest.py",
+            "tests/integration/test_transcribe.py",
+            "tests/unit/test_cer.py",
+            "tests/integration/__init__.py",
+            "tests/unit/test_audio.py",
+            "tests/eval/__init__.py",
+            "tests/unit/__init__.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 3,
+          "max_points": 3,
+          "reason": "integration/API tests",
+          "files": [
+            "tests/unit/test_backends.py",
+            "tests/__init__.py",
+            "tests/integration/test_eval_cer.py",
+            "tests/integration/conftest.py",
+            "tests/integration/test_transcribe.py",
+            "tests/unit/test_cer.py",
+            "tests/integration/__init__.py",
+            "tests/unit/test_audio.py",
+            "tests/eval/__init__.py",
+            "tests/unit/__init__.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 2,
+          "max_points": 2,
+          "reason": "eval smoke tests",
+          "files": [
+            "README.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "tests/eval/test_cer_runner.py",
+            "tests/integration/test_eval_cer.py",
+            "tests/unit/test_cer.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 2,
+          "max_points": 2,
+          "reason": "CI-ready test command",
+          "files": [
+            ".claude/commands/opsx/apply.md",
+            ".claude/commands/opsx/archive.md",
+            ".claude/commands/opsx/explore.md",
+            ".claude/commands/opsx/propose.md",
+            ".claude/skills/openspec-apply-change/SKILL.md",
+            ".claude/skills/openspec-archive-change/SKILL.md",
+            ".claude/skills/openspec-explore/SKILL.md",
+            ".claude/skills/openspec-propose/SKILL.md",
+            "Dockerfile",
+            "README.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 3,
+          "max_points": 3,
+          "reason": "Docker or compose support",
+          "files": [
+            "Dockerfile",
+            "README.md",
+            "docker-compose.yml",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "tests/unit/test_cer.py"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 2,
+          "max_points": 2,
+          "reason": "structured logging/request tracing",
+          "files": [
+            ".claude/skills/openspec-explore/SKILL.md",
+            "README.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "openapi.yaml",
+            "src/api/main.py",
+            "src/api/routes/eval_cer.py",
+            "src/api/routes/health.py",
+            "src/api/routes/transcribe.py"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 2,
+          "max_points": 2,
+          "reason": "metrics",
+          "files": [
+            ".claude/commands/opsx/apply.md",
+            ".claude/skills/openspec-apply-change/SKILL.md",
+            "README.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "openapi.yaml",
+            "requirements.txt",
+            "src/api/main.py"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 2,
+          "max_points": 2,
+          "reason": "deployment/runbook",
+          "files": [
+            ".claude/skills/openspec-explore/SKILL.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 1,
+          "max_points": 1,
+          "reason": "rollback/fallback consideration",
+          "files": [
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "openapi.yaml",
+            "src/api/routes/health.py",
+            "src/backends/__init__.py",
+            "src/backends/mock.py",
+            "src/backends/registry.py",
+            "src/config/settings.py",
+            "tests/unit/test_backends.py"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 3,
+          "max_points": 3,
+          "reason": "module boundaries",
+          "files": [
+            "src/observability/logging.py",
+            "src/api/schemas.py",
+            "src/eval/cer.py",
+            "src/observability/metrics.py",
+            "src/api/__init__.py",
+            "src/config/__init__.py",
+            "src/backends/base.py",
+            "src/audio/preprocessing.py",
+            "src/backends/mock.py",
+            "src/__init__.py"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 2,
+          "max_points": 2,
+          "reason": "configuration separation",
+          "files": [
+            ".claude/commands/opsx/archive.md",
+            ".claude/commands/opsx/propose.md",
+            ".claude/skills/openspec-archive-change/SKILL.md",
+            ".claude/skills/openspec-explore/SKILL.md",
+            ".claude/skills/openspec-propose/SKILL.md",
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 2,
+          "max_points": 2,
+          "reason": "dependency management",
+          "files": [
+            "requirements.txt"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 2,
+          "max_points": 2,
+          "reason": "basic code organization/simplicity",
+          "files": [
+            "tests/unit/test_backends.py",
+            "src/observability/logging.py",
+            "tests/__init__.py",
+            "tests/integration/test_eval_cer.py",
+            "src/api/schemas.py",
+            "tests/integration/conftest.py",
+            "src/eval/cer.py",
+            "tests/integration/test_transcribe.py",
+            "src/observability/metrics.py",
+            "src/api/__init__.py"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 1,
+          "max_points": 1,
+          "reason": "model/vendor replacement path",
+          "files": [
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "openapi.yaml",
+            "src/api/main.py",
+            "src/api/postprocessing.py",
+            "src/api/routes/health.py"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "architecture documentation",
+          "files": [
+            "docs/architecture.md",
+            "README.md",
+            "docs/runbook.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "eval protocol",
+          "files": [
+            ".claude/commands/opsx/explore.md",
+            ".claude/skills/openspec-explore/SKILL.md",
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "openapi.yaml"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "API usage examples",
+          "files": [
+            ".claude/commands/opsx/archive.md",
+            ".claude/skills/openspec-archive-change/SKILL.md",
+            ".claude/skills/openspec-propose/SKILL.md",
+            "Dockerfile",
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "implementation scope documentation",
+          "files": [
+            "docs/implementation_scope.md",
+            "src/backends/base.py"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "known limitations",
+          "files": [
+            ".claude/commands/opsx/propose.md",
+            ".claude/skills/openspec-propose/SKILL.md"
+          ]
+        }
+      ],
+      "file_count_scanned": 56,
+      "label": "openspec",
+      "pytest": {
+        "available": true,
+        "passed": true,
+        "returncode": 0,
+        "command": "/home/beomgon/side/asr-pipeline-evaluator/outputs/openspec/.venv/bin/python -m pytest -q",
+        "stdout_tail": "============================= test session starts ==============================\nplatform linux -- Python 3.8.10, pytest-8.3.4, pluggy-1.5.0\nrootdir: /home/beomgon/side/asr-pipeline-evaluator/outputs/openspec\nconfigfile: pytest.ini\ntestpaths: tests\nplugins: asyncio-0.24.0, anyio-4.5.2\nasyncio: mode=strict, default_loop_scope=None\ncollected 83 items\n\ntests/eval/test_cer_runner.py .......                                    [  8%]\ntests/integration/test_eval_cer.py ........                              [ 18%]\ntests/integration/test_health.py ....                                    [ 22%]\ntests/integration/test_metrics.py ......                                 [ 30%]\ntests/integration/test_transcribe.py ............                        [ 44%]\ntests/unit/test_audio.py .......                                         [ 53%]\ntests/unit/test_backends.py .........                                    [ 63%]\ntests/unit/test_cer.py ..............................                    [100%]\n\n============================== 83 passed in 1.33s ==============================\n",
+        "stderr_tail": "/home/beomgon/side/asr-pipeline-evaluator/outputs/openspec/.venv/lib/python3.8/site-packages/pytest_asyncio/plugin.py:208: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+      }
+    },
+    {
+      "target": "/home/beomgon/side/asr-pipeline-evaluator/outputs/gsd",
+      "total_score": 100.0,
+      "weights": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "category_scores": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "raw_category_points": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "raw_category_max": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "evidence": [
+        {
+          "category": "functionality",
+          "points": 5,
+          "max_points": 5,
+          "reason": "transcription endpoint or handler",
+          "files": [
+            "README.md",
+            "TASKS.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "src/api/routes/transcribe.py",
+            "src/api/schemas.py",
+            "src/backends/base.py",
+            "src/backends/mock.py"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "audio upload/input handling",
+          "files": [
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-phase-researcher.md",
+            ".claude/agents/gsd-plan-checker.md",
+            ".claude/agents/gsd-planner.md",
+            ".claude/commands/gsd/docs-update.md",
+            ".claude/commands/gsd/execute-phase.md",
+            ".claude/get-shit-done/references/agent-contracts.md",
+            ".claude/get-shit-done/references/checkpoints.md",
+            ".claude/get-shit-done/references/execute-mvp-tdd.md",
+            ".claude/get-shit-done/references/few-shot-examples/plan-checker.md"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 4,
+          "max_points": 4,
+          "reason": "ASR backend abstraction",
+          "files": [
+            "README.md",
+            "TASKS.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "src/api/routes/transcribe.py",
+            "src/backends/__init__.py",
+            "src/backends/base.py",
+            "src/backends/mock.py"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "response schema includes transcript/confidence/request/timing fields",
+          "files": [
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-assumptions-analyzer.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-classifier.md",
+            ".claude/agents/gsd-doc-synthesizer.md",
+            ".claude/agents/gsd-eval-auditor.md",
+            ".claude/agents/gsd-eval-planner.md",
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-phase-researcher.md",
+            ".claude/agents/gsd-plan-checker.md"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "error handling paths",
+          "files": [
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-integration-checker.md",
+            ".claude/agents/gsd-intel-updater.md",
+            ".claude/agents/gsd-nyquist-auditor.md",
+            ".claude/agents/gsd-pattern-mapper.md"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "configuration/env management",
+          "files": [
+            ".claude/agents/gsd-advisor-researcher.md",
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-verifier.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-eval-auditor.md",
+            ".claude/agents/gsd-eval-planner.md"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "preprocessing layer",
+          "files": [
+            "README.md",
+            "TASKS.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "src/api/routes/transcribe.py",
+            "src/api/schemas.py",
+            "src/audio/processor.py",
+            "src/backends/base.py",
+            "src/backends/mock.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "chunking/batching/VAD consideration",
+          "files": [
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-eval-planner.md",
+            ".claude/agents/gsd-intel-updater.md",
+            ".claude/agents/gsd-pattern-mapper.md",
+            ".claude/agents/gsd-phase-researcher.md",
+            ".claude/agents/gsd-plan-checker.md",
+            ".claude/agents/gsd-planner.md",
+            ".claude/agents/gsd-ui-researcher.md"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "model adapter boundary",
+          "files": [
+            "README.md",
+            "TASKS.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "src/api/routes/transcribe.py",
+            "src/backends/__init__.py",
+            "src/backends/base.py",
+            "src/backends/mock.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "postprocessing/transcript normalization",
+          "files": [
+            ".claude/agents/gsd-verifier.md",
+            ".claude/get-shit-done/references/verification-overrides.md",
+            ".claude/get-shit-done/templates/research.md",
+            ".claude/get-shit-done/workflows/graduation.md",
+            ".claude/get-shit-done/workflows/plant-seed.md",
+            "TASKS.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "src/api/routes/transcribe.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "async/queue/streaming extensibility",
+          "files": [
+            ".claude/agents/gsd-advisor-researcher.md",
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-synthesizer.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-domain-researcher.md",
+            ".claude/agents/gsd-executor.md"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 5,
+          "max_points": 5,
+          "reason": "CER calculation implementation/reference",
+          "files": [
+            "README.md",
+            "TASKS.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/runbook.md",
+            "src/api/main.py",
+            "src/api/routes/eval.py",
+            "src/api/schemas.py"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 3,
+          "max_points": 3,
+          "reason": "manifest/reference/hypothesis support",
+          "files": [
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debug-session-manager.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-classifier.md",
+            ".claude/agents/gsd-doc-synthesizer.md",
+            ".claude/agents/gsd-doc-verifier.md",
+            ".claude/agents/gsd-doc-writer.md"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 3,
+          "max_points": 3,
+          "reason": "explicit CER normalization policy",
+          "files": [
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-synthesizer.md",
+            ".claude/agents/gsd-eval-auditor.md",
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-planner.md",
+            ".claude/agents/gsd-roadmapper.md",
+            ".claude/agents/gsd-verifier.md",
+            ".claude/commands/gsd/complete-milestone.md",
+            ".claude/commands/gsd/debug.md"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 2,
+          "max_points": 2,
+          "reason": "per-sample and aggregate metrics",
+          "files": [
+            ".claude/agents/gsd-assumptions-analyzer.md",
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debug-session-manager.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-classifier.md",
+            ".claude/agents/gsd-doc-synthesizer.md",
+            ".claude/agents/gsd-doc-verifier.md",
+            ".claude/agents/gsd-doc-writer.md"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 2,
+          "max_points": 2,
+          "reason": "CER failure/edge-case handling",
+          "files": [
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-assumptions-analyzer.md",
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-classifier.md",
+            ".claude/agents/gsd-doc-verifier.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-domain-researcher.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "API schema/OpenAPI clarity",
+          "files": [
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-doc-classifier.md",
+            ".claude/agents/gsd-doc-synthesizer.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-eval-planner.md",
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-intel-updater.md",
+            ".claude/agents/gsd-pattern-mapper.md",
+            ".claude/agents/gsd-phase-researcher.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "latency measurement",
+          "files": [
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-eval-planner.md",
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-plan-checker.md",
+            ".claude/get-shit-done/references/ai-evals.md",
+            ".claude/get-shit-done/references/ai-frameworks.md",
+            ".claude/get-shit-done/references/domain-probes.md",
+            ".claude/get-shit-done/references/thinking-partner.md",
+            ".claude/get-shit-done/references/user-profiling.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "concurrency consideration",
+          "files": [
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-pattern-mapper.md",
+            ".claude/agents/gsd-phase-researcher.md",
+            ".claude/agents/gsd-verifier.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "timeout/retry/backoff",
+          "files": [
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-debug-session-manager.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-verifier.md",
+            ".claude/commands/gsd/config.md",
+            ".claude/commands/gsd/graphify.md",
+            ".claude/get-shit-done/references/checkpoints.md",
+            ".claude/get-shit-done/references/common-bug-patterns.md",
+            ".claude/get-shit-done/references/gate-prompts.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "streaming extension path",
+          "files": [
+            ".claude/agents/gsd-advisor-researcher.md",
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-assumptions-analyzer.md",
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-synthesizer.md",
+            ".claude/agents/gsd-doc-verifier.md",
+            ".claude/agents/gsd-doc-writer.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "health and metrics endpoints",
+          "files": [
+            ".claude/commands/gsd/health.md",
+            ".claude/get-shit-done/workflows/health.md",
+            ".claude/gsd-file-manifest.json",
+            "README.md",
+            "TASKS.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/prometheus.yml"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 3,
+          "max_points": 3,
+          "reason": "unit tests",
+          "files": [
+            "tests/unit/test_cer.py",
+            "tests/__init__.py",
+            "tests/unit/test_normalizer.py",
+            "tests/unit/__init__.py",
+            "tests/integration/test_api.py",
+            "tests/eval/__init__.py",
+            "tests/eval/test_eval_smoke.py",
+            "tests/integration/__init__.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 3,
+          "max_points": 3,
+          "reason": "integration/API tests",
+          "files": [
+            "tests/unit/test_cer.py",
+            "tests/__init__.py",
+            "tests/unit/test_normalizer.py",
+            "tests/unit/__init__.py",
+            "tests/integration/test_api.py",
+            "tests/eval/__init__.py",
+            "tests/eval/test_eval_smoke.py",
+            "tests/integration/__init__.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 2,
+          "max_points": 2,
+          "reason": "eval smoke tests",
+          "files": [
+            ".claude/agents/gsd-debugger.md",
+            ".claude/get-shit-done/references/thinking-models-execution.md",
+            ".claude/get-shit-done/workflows/help.md",
+            "TASKS.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "tests/eval/test_eval_smoke.py",
+            "tests/integration/test_api.py",
+            "tests/unit/test_cer.py",
+            "tests/unit/test_normalizer.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 2,
+          "max_points": 2,
+          "reason": "CI-ready test command",
+          "files": [
+            ".claude/agents/gsd-advisor-researcher.md",
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-assumptions-analyzer.md",
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debug-session-manager.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-classifier.md",
+            ".claude/agents/gsd-doc-synthesizer.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 3,
+          "max_points": 3,
+          "reason": "Docker or compose support",
+          "files": [
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-intel-updater.md",
+            ".claude/agents/gsd-phase-researcher.md",
+            ".claude/agents/gsd-plan-checker.md",
+            ".claude/agents/gsd-planner.md",
+            ".claude/agents/gsd-roadmapper.md",
+            ".claude/commands/gsd/surface.md",
+            ".claude/get-shit-done/references/model-profiles.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 2,
+          "max_points": 2,
+          "reason": "structured logging/request tracing",
+          "files": [
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-synthesizer.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-eval-auditor.md",
+            ".claude/agents/gsd-eval-planner.md",
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-integration-checker.md",
+            ".claude/agents/gsd-pattern-mapper.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 2,
+          "max_points": 2,
+          "reason": "metrics",
+          "files": [
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-classifier.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-eval-auditor.md",
+            ".claude/agents/gsd-eval-planner.md",
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-intel-updater.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 2,
+          "max_points": 2,
+          "reason": "deployment/runbook",
+          "files": [
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-classifier.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-domain-researcher.md",
+            ".claude/agents/gsd-eval-auditor.md",
+            ".claude/agents/gsd-planner.md",
+            ".claude/get-shit-done/references/ai-evals.md",
+            ".claude/get-shit-done/references/checkpoints.md",
+            ".claude/get-shit-done/references/common-bug-patterns.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 1,
+          "max_points": 1,
+          "reason": "rollback/fallback consideration",
+          "files": [
+            ".claude/agents/gsd-advisor-researcher.md",
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-domain-researcher.md",
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-intel-updater.md"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 3,
+          "max_points": 3,
+          "reason": "module boundaries",
+          "files": [
+            "src/eval/cer.py",
+            "src/backends/base.py",
+            "src/api/routes/metrics_route.py",
+            "src/api/main.py",
+            "src/api/routes/transcribe.py",
+            "src/api/schemas.py",
+            "src/api/routes/__init__.py",
+            "src/config/settings.py",
+            "src/api/routes/health.py",
+            "src/eval/cer_runner.py"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 2,
+          "max_points": 2,
+          "reason": "configuration separation",
+          "files": [
+            ".claude/agents/gsd-advisor-researcher.md",
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-classifier.md",
+            ".claude/agents/gsd-doc-verifier.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-domain-researcher.md"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 2,
+          "max_points": 2,
+          "reason": "dependency management",
+          "files": [
+            "requirements.txt"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 2,
+          "max_points": 2,
+          "reason": "basic code organization/simplicity",
+          "files": [
+            "src/eval/cer.py",
+            "tests/unit/test_cer.py",
+            "tests/__init__.py",
+            "tests/unit/test_normalizer.py",
+            "src/backends/base.py",
+            "src/api/routes/metrics_route.py",
+            "src/api/main.py",
+            "conftest.py",
+            "src/api/routes/transcribe.py",
+            "src/api/schemas.py"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 1,
+          "max_points": 1,
+          "reason": "model/vendor replacement path",
+          "files": [
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-phase-researcher.md",
+            ".claude/agents/gsd-plan-checker.md",
+            ".claude/agents/gsd-planner.md",
+            ".claude/get-shit-done/references/checkpoints.md",
+            ".claude/get-shit-done/references/common-bug-patterns.md",
+            ".claude/get-shit-done/references/git-integration.md",
+            ".claude/get-shit-done/references/scout-codebase.md",
+            ".claude/get-shit-done/references/sketch-interactivity.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "architecture documentation",
+          "files": [
+            ".claude/get-shit-done/templates/codebase/architecture.md",
+            "docs/runbook.md",
+            "docs/architecture.md",
+            ".claude/get-shit-done/templates/research-project/ARCHITECTURE.md",
+            ".claude/get-shit-done/templates/README.md",
+            "README.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "eval protocol",
+          "files": [
+            ".claude/agents/gsd-ai-researcher.md",
+            ".claude/agents/gsd-code-fixer.md",
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debug-session-manager.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-classifier.md",
+            ".claude/agents/gsd-doc-synthesizer.md",
+            ".claude/agents/gsd-doc-verifier.md",
+            ".claude/agents/gsd-doc-writer.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "API usage examples",
+          "files": [
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-debugger.md",
+            ".claude/agents/gsd-doc-classifier.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-eval-auditor.md",
+            ".claude/agents/gsd-eval-planner.md",
+            ".claude/agents/gsd-pattern-mapper.md",
+            ".claude/agents/gsd-phase-researcher.md",
+            ".claude/agents/gsd-planner.md",
+            ".claude/agents/gsd-ui-auditor.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "implementation scope documentation",
+          "files": [
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-doc-writer.md",
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-pattern-mapper.md",
+            ".claude/agents/gsd-phase-researcher.md",
+            ".claude/agents/gsd-plan-checker.md",
+            ".claude/agents/gsd-planner.md",
+            ".claude/agents/gsd-roadmapper.md",
+            ".claude/agents/gsd-ui-checker.md",
+            ".claude/agents/gsd-ui-researcher.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "known limitations",
+          "files": [
+            ".claude/agents/gsd-code-reviewer.md",
+            ".claude/agents/gsd-codebase-mapper.md",
+            ".claude/agents/gsd-executor.md",
+            ".claude/agents/gsd-plan-checker.md",
+            ".claude/agents/gsd-planner.md",
+            ".claude/agents/gsd-project-researcher.md",
+            ".claude/agents/gsd-roadmapper.md",
+            ".claude/agents/gsd-verifier.md",
+            ".claude/commands/gsd/capture.md",
+            ".claude/commands/gsd/execute-phase.md"
+          ]
+        }
+      ],
+      "file_count_scanned": 375,
+      "label": "gsd",
+      "pytest": {
+        "available": true,
+        "passed": true,
+        "returncode": 0,
+        "command": "/home/beomgon/side/asr-pipeline-evaluator/outputs/gsd/.venv/bin/python -m pytest -q",
+        "stdout_tail": "..........................................                               [100%]\n42 passed in 1.25s\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "target": "/home/beomgon/side/asr-pipeline-evaluator/outputs/bmad",
+      "total_score": 100.0,
+      "weights": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "category_scores": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "raw_category_points": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "raw_category_max": {
+        "functionality": 20.0,
+        "asr_pipeline_structure": 15.0,
+        "cer_evaluation": 15.0,
+        "serving_api_quality": 15.0,
+        "tests": 10.0,
+        "operations": 10.0,
+        "maintainability": 10.0,
+        "documentation": 5.0
+      },
+      "evidence": [
+        {
+          "category": "functionality",
+          "points": 5,
+          "max_points": 5,
+          "reason": "transcription endpoint or handler",
+          "files": [
+            "README.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/pm-brief.md",
+            "docs/qa-checklist.md",
+            "docs/runbook.md",
+            "src/api/models.py",
+            "src/api/routes/transcribe.py"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "audio upload/input handling",
+          "files": [
+            ".claude/skills/bmad-prfaq/references/internal-faq.md",
+            ".claude/skills/bmad-product-brief/prompts/draft-and-review.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/pm-brief.md",
+            "docs/qa-checklist.md",
+            "docs/runbook.md",
+            "requirements.txt"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 4,
+          "max_points": 4,
+          "reason": "ASR backend abstraction",
+          "files": [
+            "README.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/pm-brief.md",
+            "docs/qa-checklist.md",
+            "docs/runbook.md",
+            "src/backends/__init__.py",
+            "src/backends/base.py",
+            "src/backends/mock.py",
+            "src/backends/registry.py"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "response schema includes transcript/confidence/request/timing fields",
+          "files": [
+            ".claude/skills/bmad-brainstorming/steps/step-02a-user-selected.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02b-ai-recommended.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02c-random-selection.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02d-progressive-flow.md",
+            ".claude/skills/bmad-brainstorming/steps/step-04-idea-organization.md",
+            ".claude/skills/bmad-check-implementation-readiness/steps/step-05-epic-quality-review.md",
+            ".claude/skills/bmad-checkpoint-preview/step-04-testing.md",
+            ".claude/skills/bmad-create-architecture/steps/step-05-patterns.md",
+            ".claude/skills/bmad-create-architecture/steps/step-07-validation.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-05-domain.md"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "error handling paths",
+          "files": [
+            ".claude/skills/bmad-check-implementation-readiness/SKILL.md",
+            ".claude/skills/bmad-check-implementation-readiness/steps/step-02-prd-analysis.md",
+            ".claude/skills/bmad-check-implementation-readiness/steps/step-05-epic-quality-review.md",
+            ".claude/skills/bmad-checkpoint-preview/step-02-walkthrough.md",
+            ".claude/skills/bmad-checkpoint-preview/step-03-detail-pass.md",
+            ".claude/skills/bmad-checkpoint-preview/step-04-testing.md",
+            ".claude/skills/bmad-code-review/SKILL.md",
+            ".claude/skills/bmad-correct-course/checklist.md",
+            ".claude/skills/bmad-create-architecture/steps/step-04-decisions.md",
+            ".claude/skills/bmad-create-architecture/steps/step-05-patterns.md"
+          ]
+        },
+        {
+          "category": "functionality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "configuration/env management",
+          "files": [
+            ".claude/skills/bmad-advanced-elicitation/SKILL.md",
+            ".claude/skills/bmad-agent-analyst/SKILL.md",
+            ".claude/skills/bmad-agent-analyst/customize.toml",
+            ".claude/skills/bmad-agent-architect/SKILL.md",
+            ".claude/skills/bmad-agent-architect/customize.toml",
+            ".claude/skills/bmad-agent-dev/SKILL.md",
+            ".claude/skills/bmad-agent-dev/customize.toml",
+            ".claude/skills/bmad-agent-pm/SKILL.md",
+            ".claude/skills/bmad-agent-pm/customize.toml",
+            ".claude/skills/bmad-agent-tech-writer/SKILL.md"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "preprocessing layer",
+          "files": [
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/pm-brief.md",
+            "docs/qa-checklist.md",
+            "src/api/models.py",
+            "src/api/routes/transcribe.py",
+            "src/audio/__init__.py",
+            "src/audio/preprocessor.py",
+            "src/backends/base.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "chunking/batching/VAD consideration",
+          "files": [
+            ".claude/skills/bmad-code-review/steps/step-01-gather-context.md",
+            ".claude/skills/bmad-code-review/steps/step-04-present.md",
+            ".claude/skills/bmad-correct-course/SKILL.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-05-domain.md",
+            ".claude/skills/bmad-document-project/checklist.md",
+            ".claude/skills/bmad-document-project/templates/project-scan-report-schema.json",
+            ".claude/skills/bmad-document-project/workflows/full-scan-instructions.md",
+            ".claude/skills/bmad-help/SKILL.md",
+            ".claude/skills/bmad-validate-prd/steps-v/step-v-09-project-type-validation.md",
+            "README.md"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "model adapter boundary",
+          "files": [
+            "README.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/pm-brief.md",
+            "docs/qa-checklist.md",
+            "docs/runbook.md",
+            "src/backends/__init__.py",
+            "src/backends/base.py",
+            "src/backends/mock.py",
+            "src/backends/registry.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "postprocessing/transcript normalization",
+          "files": [
+            "README.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/pm-brief.md",
+            "docs/qa-checklist.md",
+            "src/api/models.py",
+            "src/api/routes/transcribe.py",
+            "src/backends/mock.py"
+          ]
+        },
+        {
+          "category": "asr_pipeline_structure",
+          "points": 3,
+          "max_points": 3,
+          "reason": "async/queue/streaming extensibility",
+          "files": [
+            ".claude/skills/bmad-check-implementation-readiness/steps/step-02-prd-analysis.md",
+            ".claude/skills/bmad-checkpoint-preview/generate-trail.md",
+            ".claude/skills/bmad-create-architecture/steps/step-03-starter.md",
+            ".claude/skills/bmad-create-architecture/steps/step-05-patterns.md",
+            ".claude/skills/bmad-create-prd/data/prd-purpose.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-09-functional.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-10-nonfunctional.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-12-complete.md",
+            ".claude/skills/bmad-distillator/SKILL.md",
+            ".claude/skills/bmad-distillator/agents/distillate-compressor.md"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 5,
+          "max_points": 5,
+          "reason": "CER calculation implementation/reference",
+          "files": [
+            "README.md",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/eval_protocol.md",
+            "docs/implementation_scope.md",
+            "docs/pm-brief.md",
+            "docs/qa-checklist.md",
+            "docs/runbook.md",
+            "src/api/main.py",
+            "src/api/models.py"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 3,
+          "max_points": 3,
+          "reason": "manifest/reference/hypothesis support",
+          "files": [
+            ".claude/skills/bmad-agent-analyst/SKILL.md",
+            ".claude/skills/bmad-agent-analyst/customize.toml",
+            ".claude/skills/bmad-agent-architect/SKILL.md",
+            ".claude/skills/bmad-agent-architect/customize.toml",
+            ".claude/skills/bmad-agent-dev/SKILL.md",
+            ".claude/skills/bmad-agent-dev/customize.toml",
+            ".claude/skills/bmad-agent-pm/SKILL.md",
+            ".claude/skills/bmad-agent-pm/customize.toml",
+            ".claude/skills/bmad-agent-tech-writer/SKILL.md",
+            ".claude/skills/bmad-agent-tech-writer/customize.toml"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 3,
+          "max_points": 3,
+          "reason": "explicit CER normalization policy",
+          "files": [
+            ".claude/skills/bmad-checkpoint-preview/generate-trail.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-10-nonfunctional.md",
+            ".claude/skills/bmad-create-ux-design/steps/step-13-responsive-accessibility.md",
+            ".claude/skills/bmad-customize/scripts/list_customizable_skills.py",
+            ".claude/skills/bmad-distillator/resources/distillate-format-reference.md",
+            ".claude/skills/bmad-distillator/scripts/analyze_sources.py",
+            ".claude/skills/bmad-document-project/checklist.md",
+            ".claude/skills/bmad-domain-research/SKILL.md",
+            ".claude/skills/bmad-editorial-review-structure/SKILL.md",
+            ".claude/skills/bmad-market-research/SKILL.md"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 2,
+          "max_points": 2,
+          "reason": "per-sample and aggregate metrics",
+          "files": [
+            ".claude/skills/bmad-brainstorming/steps/step-01b-continue.md",
+            ".claude/skills/bmad-brainstorming/steps/step-03-technique-execution.md",
+            ".claude/skills/bmad-brainstorming/steps/step-04-idea-organization.md",
+            ".claude/skills/bmad-check-implementation-readiness/steps/step-06-final-assessment.md",
+            ".claude/skills/bmad-checkpoint-preview/step-01-orientation.md",
+            ".claude/skills/bmad-checkpoint-preview/step-03-detail-pass.md",
+            ".claude/skills/bmad-code-review/steps/step-01-gather-context.md",
+            ".claude/skills/bmad-code-review/steps/step-03-triage.md",
+            ".claude/skills/bmad-code-review/steps/step-04-present.md",
+            ".claude/skills/bmad-correct-course/SKILL.md"
+          ]
+        },
+        {
+          "category": "cer_evaluation",
+          "points": 2,
+          "max_points": 2,
+          "reason": "CER failure/edge-case handling",
+          "files": [
+            ".claude/skills/bmad-agent-analyst/SKILL.md",
+            ".claude/skills/bmad-agent-architect/SKILL.md",
+            ".claude/skills/bmad-agent-dev/SKILL.md",
+            ".claude/skills/bmad-agent-pm/SKILL.md",
+            ".claude/skills/bmad-agent-tech-writer/SKILL.md",
+            ".claude/skills/bmad-agent-ux-designer/SKILL.md",
+            ".claude/skills/bmad-brainstorming/steps/step-01-session-setup.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02a-user-selected.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02b-ai-recommended.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02c-random-selection.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "API schema/OpenAPI clarity",
+          "files": [
+            ".claude/skills/bmad-agent-tech-writer/SKILL.md",
+            ".claude/skills/bmad-checkpoint-preview/step-02-walkthrough.md",
+            ".claude/skills/bmad-checkpoint-preview/step-03-detail-pass.md",
+            ".claude/skills/bmad-correct-course/checklist.md",
+            ".claude/skills/bmad-create-architecture/steps/step-06-structure.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-07-project-type.md",
+            ".claude/skills/bmad-create-story/SKILL.md",
+            ".claude/skills/bmad-create-story/checklist.md",
+            ".claude/skills/bmad-document-project/checklist.md",
+            ".claude/skills/bmad-document-project/templates/deep-dive-template.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "latency measurement",
+          "files": [
+            ".claude/skills/bmad-brainstorming/steps/step-02a-user-selected.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02b-ai-recommended.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02c-random-selection.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02d-progressive-flow.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-05-domain.md",
+            ".claude/skills/bmad-document-project/workflows/deep-dive-instructions.md",
+            ".claude/skills/bmad-market-research/steps/step-04-customer-decisions.md",
+            ".claude/skills/bmad-retrospective/SKILL.md",
+            "docs/api.md",
+            "docs/architecture.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 3,
+          "max_points": 3,
+          "reason": "concurrency consideration",
+          "files": [
+            ".claude/skills/bmad-check-implementation-readiness/steps/step-02-prd-analysis.md",
+            ".claude/skills/bmad-create-architecture/steps/step-03-starter.md",
+            ".claude/skills/bmad-create-architecture/steps/step-05-patterns.md",
+            ".claude/skills/bmad-create-prd/data/prd-purpose.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-10-nonfunctional.md",
+            ".claude/skills/bmad-document-project/workflows/full-scan-instructions.md",
+            ".claude/skills/bmad-edit-prd/data/prd-purpose.md",
+            ".claude/skills/bmad-generate-project-context/steps/step-01-discover.md",
+            ".claude/skills/bmad-party-mode/SKILL.md",
+            ".claude/skills/bmad-technical-research/technical-steps/step-03-integration-patterns.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "timeout/retry/backoff",
+          "files": [
+            ".claude/skills/bmad-create-architecture/steps/step-05-patterns.md",
+            ".claude/skills/bmad-party-mode/SKILL.md",
+            ".claude/skills/bmad-quick-dev/SKILL.md",
+            ".claude/skills/bmad-review-edge-case-hunter/SKILL.md",
+            ".claude/skills/bmad-technical-research/technical-steps/step-03-integration-patterns.md",
+            "Dockerfile",
+            "docker-compose.yml"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "streaming extension path",
+          "files": [
+            ".claude/skills/bmad-advanced-elicitation/SKILL.md",
+            ".claude/skills/bmad-agent-analyst/SKILL.md",
+            ".claude/skills/bmad-agent-architect/SKILL.md",
+            ".claude/skills/bmad-agent-dev/SKILL.md",
+            ".claude/skills/bmad-agent-pm/SKILL.md",
+            ".claude/skills/bmad-agent-tech-writer/SKILL.md",
+            ".claude/skills/bmad-agent-ux-designer/SKILL.md",
+            ".claude/skills/bmad-brainstorming/steps/step-01b-continue.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02b-ai-recommended.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02d-progressive-flow.md"
+          ]
+        },
+        {
+          "category": "serving_api_quality",
+          "points": 2,
+          "max_points": 2,
+          "reason": "health and metrics endpoints",
+          "files": [
+            "Dockerfile",
+            "README.md",
+            "docker-compose.yml",
+            "docs/api.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/pm-brief.md",
+            "docs/qa-checklist.md",
+            "docs/runbook.md",
+            "requirements.txt"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 3,
+          "max_points": 3,
+          "reason": "unit tests",
+          "files": [
+            "tests/unit/test_cer.py",
+            "tests/__init__.py",
+            ".claude/skills/bmad-customize/scripts/tests/test_list_customizable_skills.py",
+            "tests/integration/test_health.py",
+            "tests/unit/test_normalization.py",
+            "tests/conftest.py",
+            "tests/unit/__init__.py",
+            ".claude/skills/bmad-distillator/scripts/tests/test_analyze_sources.py",
+            "tests/eval/__init__.py",
+            "tests/integration/test_transcribe.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 3,
+          "max_points": 3,
+          "reason": "integration/API tests",
+          "files": [
+            "tests/unit/test_cer.py",
+            "tests/__init__.py",
+            ".claude/skills/bmad-customize/scripts/tests/test_list_customizable_skills.py",
+            "tests/integration/test_health.py",
+            "tests/unit/test_normalization.py",
+            "tests/conftest.py",
+            "tests/unit/__init__.py",
+            ".claude/skills/bmad-distillator/scripts/tests/test_analyze_sources.py",
+            "tests/eval/__init__.py",
+            "tests/integration/test_transcribe.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 2,
+          "max_points": 2,
+          "reason": "eval smoke tests",
+          "files": [
+            ".claude/skills/bmad-checkpoint-preview/generate-trail.md",
+            ".claude/skills/bmad-retrospective/SKILL.md",
+            "README.md",
+            "docs/architecture.md",
+            "docs/implementation_scope.md",
+            "docs/pm-brief.md",
+            "docs/qa-checklist.md",
+            "docs/runbook.md",
+            "tests/eval/test_eval_smoke.py",
+            "tests/integration/test_metrics.py"
+          ]
+        },
+        {
+          "category": "tests",
+          "points": 2,
+          "max_points": 2,
+          "reason": "CI-ready test command",
+          "files": [
+            ".claude/skills/bmad-advanced-elicitation/SKILL.md",
+            ".claude/skills/bmad-agent-analyst/SKILL.md",
+            ".claude/skills/bmad-agent-analyst/customize.toml",
+            ".claude/skills/bmad-agent-architect/SKILL.md",
+            ".claude/skills/bmad-agent-architect/customize.toml",
+            ".claude/skills/bmad-agent-dev/SKILL.md",
+            ".claude/skills/bmad-agent-dev/customize.toml",
+            ".claude/skills/bmad-agent-pm/SKILL.md",
+            ".claude/skills/bmad-agent-pm/customize.toml",
+            ".claude/skills/bmad-agent-tech-writer/SKILL.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 3,
+          "max_points": 3,
+          "reason": "Docker or compose support",
+          "files": [
+            ".claude/skills/bmad-create-architecture/steps/step-03-starter.md",
+            ".claude/skills/bmad-create-architecture/steps/step-06-structure.md",
+            ".claude/skills/bmad-customize/SKILL.md",
+            ".claude/skills/bmad-document-project/workflows/full-scan-instructions.md",
+            ".claude/skills/bmad-technical-research/technical-steps/step-02-technical-overview.md",
+            ".claude/skills/bmad-validate-prd/steps-v/step-v-05-measurability-validation.md",
+            ".claude/skills/bmad-validate-prd/steps-v/step-v-07-implementation-leakage-validation.md",
+            "Dockerfile",
+            "README.md",
+            "docker-compose.yml"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 2,
+          "max_points": 2,
+          "reason": "structured logging/request tracing",
+          "files": [
+            ".claude/skills/bmad-check-implementation-readiness/SKILL.md",
+            ".claude/skills/bmad-check-implementation-readiness/steps/step-02-prd-analysis.md",
+            ".claude/skills/bmad-check-implementation-readiness/steps/step-03-epic-coverage-validation.md",
+            ".claude/skills/bmad-check-implementation-readiness/steps/step-05-epic-quality-review.md",
+            ".claude/skills/bmad-checkpoint-preview/step-02-walkthrough.md",
+            ".claude/skills/bmad-checkpoint-preview/step-03-detail-pass.md",
+            ".claude/skills/bmad-create-architecture/steps/step-04-decisions.md",
+            ".claude/skills/bmad-create-architecture/steps/step-05-patterns.md",
+            ".claude/skills/bmad-create-epics-and-stories/steps/step-01-validate-prerequisites.md",
+            ".claude/skills/bmad-create-prd/data/prd-purpose.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 2,
+          "max_points": 2,
+          "reason": "metrics",
+          "files": [
+            ".claude/skills/bmad-brainstorming/steps/step-01-session-setup.md",
+            ".claude/skills/bmad-brainstorming/steps/step-01b-continue.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02a-user-selected.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02b-ai-recommended.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02c-random-selection.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02d-progressive-flow.md",
+            ".claude/skills/bmad-brainstorming/steps/step-03-technique-execution.md",
+            ".claude/skills/bmad-brainstorming/steps/step-04-idea-organization.md",
+            ".claude/skills/bmad-check-implementation-readiness/steps/step-01-document-discovery.md",
+            ".claude/skills/bmad-check-implementation-readiness/steps/step-02-prd-analysis.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 2,
+          "max_points": 2,
+          "reason": "deployment/runbook",
+          "files": [
+            ".claude/skills/bmad-brainstorming/steps/step-02a-user-selected.md",
+            ".claude/skills/bmad-checkpoint-preview/step-03-detail-pass.md",
+            ".claude/skills/bmad-correct-course/SKILL.md",
+            ".claude/skills/bmad-correct-course/checklist.md",
+            ".claude/skills/bmad-create-architecture/steps/step-03-starter.md",
+            ".claude/skills/bmad-create-architecture/steps/step-04-decisions.md",
+            ".claude/skills/bmad-create-architecture/steps/step-06-structure.md",
+            ".claude/skills/bmad-create-epics-and-stories/steps/step-01-validate-prerequisites.md",
+            ".claude/skills/bmad-create-epics-and-stories/steps/step-02-design-epics.md",
+            ".claude/skills/bmad-create-story/SKILL.md"
+          ]
+        },
+        {
+          "category": "operations",
+          "points": 1,
+          "max_points": 1,
+          "reason": "rollback/fallback consideration",
+          "files": [
+            ".claude/skills/bmad-checkpoint-preview/step-01-orientation.md",
+            ".claude/skills/bmad-checkpoint-preview/step-02-walkthrough.md",
+            ".claude/skills/bmad-correct-course/SKILL.md",
+            ".claude/skills/bmad-correct-course/checklist.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-02-discovery.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-05-domain.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-06-innovation.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-07-project-type.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-10-nonfunctional.md",
+            ".claude/skills/bmad-create-story/SKILL.md"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 3,
+          "max_points": 3,
+          "reason": "module boundaries",
+          "files": [
+            "src/eval/cer.py",
+            "src/backends/registry.py",
+            "src/backends/base.py",
+            "src/api/main.py",
+            "src/audio/preprocessor.py",
+            "src/api/routes/transcribe.py",
+            "src/api/routes/__init__.py",
+            "src/config/settings.py",
+            "src/api/routes/health.py",
+            "src/eval/cer_runner.py"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 2,
+          "max_points": 2,
+          "reason": "configuration separation",
+          "files": [
+            ".claude/skills/bmad-advanced-elicitation/SKILL.md",
+            ".claude/skills/bmad-agent-analyst/SKILL.md",
+            ".claude/skills/bmad-agent-analyst/customize.toml",
+            ".claude/skills/bmad-agent-architect/SKILL.md",
+            ".claude/skills/bmad-agent-architect/customize.toml",
+            ".claude/skills/bmad-agent-dev/SKILL.md",
+            ".claude/skills/bmad-agent-dev/customize.toml",
+            ".claude/skills/bmad-agent-pm/SKILL.md",
+            ".claude/skills/bmad-agent-pm/customize.toml",
+            ".claude/skills/bmad-agent-tech-writer/SKILL.md"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 2,
+          "max_points": 2,
+          "reason": "dependency management",
+          "files": [
+            "requirements.txt"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 2,
+          "max_points": 2,
+          "reason": "basic code organization/simplicity",
+          "files": [
+            "src/eval/cer.py",
+            "tests/unit/test_cer.py",
+            "src/backends/registry.py",
+            "tests/__init__.py",
+            "src/backends/base.py",
+            ".claude/skills/bmad-customize/scripts/list_customizable_skills.py",
+            ".claude/skills/bmad-customize/scripts/tests/test_list_customizable_skills.py",
+            "src/api/main.py",
+            "src/audio/preprocessor.py",
+            "tests/integration/test_health.py"
+          ]
+        },
+        {
+          "category": "maintainability",
+          "points": 1,
+          "max_points": 1,
+          "reason": "model/vendor replacement path",
+          "files": [
+            ".claude/skills/bmad-create-architecture/steps/step-02-context.md",
+            ".claude/skills/bmad-create-architecture/steps/step-03-starter.md",
+            ".claude/skills/bmad-create-architecture/steps/step-06-structure.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-06-innovation.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-07-project-type.md",
+            ".claude/skills/bmad-document-project/templates/index-template.md",
+            ".claude/skills/bmad-document-project/workflows/full-scan-instructions.md",
+            ".claude/skills/bmad-validate-prd/steps-v/step-v-07-implementation-leakage-validation.md",
+            ".claude/skills/bmad-validate-prd/steps-v/step-v-09-project-type-validation.md",
+            ".env.example"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "architecture documentation",
+          "files": [
+            "docs/runbook.md",
+            "docs/architecture.md",
+            "README.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "eval protocol",
+          "files": [
+            ".claude/skills/bmad-agent-analyst/SKILL.md",
+            ".claude/skills/bmad-agent-analyst/customize.toml",
+            ".claude/skills/bmad-agent-architect/SKILL.md",
+            ".claude/skills/bmad-agent-architect/customize.toml",
+            ".claude/skills/bmad-agent-dev/SKILL.md",
+            ".claude/skills/bmad-agent-dev/customize.toml",
+            ".claude/skills/bmad-agent-pm/SKILL.md",
+            ".claude/skills/bmad-agent-pm/customize.toml",
+            ".claude/skills/bmad-agent-tech-writer/SKILL.md",
+            ".claude/skills/bmad-agent-tech-writer/customize.toml"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "API usage examples",
+          "files": [
+            ".claude/skills/bmad-agent-analyst/SKILL.md",
+            ".claude/skills/bmad-agent-architect/SKILL.md",
+            ".claude/skills/bmad-agent-dev/SKILL.md",
+            ".claude/skills/bmad-agent-pm/SKILL.md",
+            ".claude/skills/bmad-agent-tech-writer/SKILL.md",
+            ".claude/skills/bmad-agent-ux-designer/SKILL.md",
+            ".claude/skills/bmad-brainstorming/steps/step-02d-progressive-flow.md",
+            ".claude/skills/bmad-brainstorming/steps/step-03-technique-execution.md",
+            ".claude/skills/bmad-check-implementation-readiness/steps/step-01-document-discovery.md",
+            ".claude/skills/bmad-checkpoint-preview/step-04-testing.md"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "implementation scope documentation",
+          "files": [
+            ".claude/skills/bmad-create-epics-and-stories/steps/step-01-validate-prerequisites.md",
+            ".claude/skills/bmad-create-prd/steps-c/step-08-scoping.md",
+            ".claude/skills/bmad-customize/SKILL.md",
+            ".claude/skills/bmad-quick-dev/spec-template.md",
+            ".claude/skills/bmad-validate-prd/steps-v/step-v-02-format-detection.md",
+            ".claude/skills/bmad-validate-prd/steps-v/step-v-04-brief-coverage-validation.md",
+            "docs/implementation_scope.md",
+            "docs/pm-brief.md",
+            "src/backends/base.py"
+          ]
+        },
+        {
+          "category": "documentation",
+          "points": 1,
+          "max_points": 1,
+          "reason": "known limitations",
+          "files": [
+            ".claude/skills/bmad-check-implementation-readiness/SKILL.md",
+            ".claude/skills/bmad-check-implementation-readiness/steps/step-05-epic-quality-review.md",
+            ".claude/skills/bmad-create-architecture/steps/step-01b-continue.md",
+            ".claude/skills/bmad-create-epics-and-stories/SKILL.md",
+            ".claude/skills/bmad-create-prd/SKILL.md",
+            ".claude/skills/bmad-document-project/checklist.md",
+            ".claude/skills/bmad-document-project/templates/deep-dive-template.md",
+            ".claude/skills/bmad-document-project/workflows/deep-dive-instructions.md",
+            ".claude/skills/bmad-document-project/workflows/full-scan-instructions.md",
+            ".claude/skills/bmad-domain-research/domain-steps/step-02-domain-analysis.md"
+          ]
+        }
+      ],
+      "file_count_scanned": 307,
+      "label": "bmad",
+      "pytest": {
+        "available": true,
+        "passed": true,
+        "returncode": 0,
+        "command": "/home/beomgon/side/asr-pipeline-evaluator/outputs/bmad/.venv/bin/python -m pytest -q",
+        "stdout_tail": "......................................................................   [100%]\n70 passed in 0.49s\n",
+        "stderr_tail": "/home/beomgon/side/asr-pipeline-evaluator/outputs/bmad/.venv/lib/python3.8/site-packages/pytest_asyncio/plugin.py:208: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+      }
+    }
+  ]
+}

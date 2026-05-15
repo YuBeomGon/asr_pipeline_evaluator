@@ -1,0 +1,5 @@
+{"id": "sample_001", "audio": "audio/sample_001.wav", "reference": "안녕하세요", "hypothesis": "안녕하세요"}
+{"id": "sample_002", "audio": "audio/sample_002.wav", "reference": "테스트입니다", "hypothesis": "텍스트입니다"}
+{"id": "sample_003", "audio": "audio/sample_003.wav", "reference": "음성 인식 시스템", "hypothesis": "음성 인식 시스템"}
+{"id": "sample_004", "audio": "audio/sample_004.wav", "reference": "한국어 자연어 처리", "hypothesis": ""}
+{"id": "sample_005", "audio": "audio/sample_005.wav", "reference": "모의 백엔드 테스트", "hypothesis": "모의 백엔드 테스트"}

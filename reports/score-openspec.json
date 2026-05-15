@@ -1,0 +1,733 @@
+{
+  "target": "/home/beomgon/side/asr-pipeline-evaluator/outputs/openspec",
+  "total_score": 100.0,
+  "weights": {
+    "functionality": 20.0,
+    "asr_pipeline_structure": 15.0,
+    "cer_evaluation": 15.0,
+    "serving_api_quality": 15.0,
+    "tests": 10.0,
+    "operations": 10.0,
+    "maintainability": 10.0,
+    "documentation": 5.0
+  },
+  "category_scores": {
+    "functionality": 20.0,
+    "asr_pipeline_structure": 15.0,
+    "cer_evaluation": 15.0,
+    "serving_api_quality": 15.0,
+    "tests": 10.0,
+    "operations": 10.0,
+    "maintainability": 10.0,
+    "documentation": 5.0
+  },
+  "raw_category_points": {
+    "functionality": 20.0,
+    "asr_pipeline_structure": 15.0,
+    "cer_evaluation": 15.0,
+    "serving_api_quality": 15.0,
+    "tests": 10.0,
+    "operations": 10.0,
+    "maintainability": 10.0,
+    "documentation": 5.0
+  },
+  "raw_category_max": {
+    "functionality": 20.0,
+    "asr_pipeline_structure": 15.0,
+    "cer_evaluation": 15.0,
+    "serving_api_quality": 15.0,
+    "tests": 10.0,
+    "operations": 10.0,
+    "maintainability": 10.0,
+    "documentation": 5.0
+  },
+  "evidence": [
+    {
+      "category": "functionality",
+      "points": 5,
+      "max_points": 5,
+      "reason": "transcription endpoint or handler",
+      "files": [
+        "README.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "openapi.yaml",
+        "src/api/routes/transcribe.py",
+        "src/backends/base.py",
+        "src/backends/mock.py",
+        "tests/integration/test_transcribe.py"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "audio upload/input handling",
+      "files": [
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/eval_protocol.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "openapi.yaml",
+        "requirements.txt",
+        "src/api/routes/transcribe.py",
+        "src/audio/preprocessing.py",
+        "src/eval/cer_runner.py"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 4,
+      "max_points": 4,
+      "reason": "ASR backend abstraction",
+      "files": [
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "src/api/routes/transcribe.py",
+        "src/backends/__init__.py",
+        "src/backends/base.py",
+        "src/backends/mock.py",
+        "src/backends/registry.py",
+        "src/config/settings.py",
+        "tests/unit/test_backends.py"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "response schema includes transcript/confidence/request/timing fields",
+      "files": [
+        "README.md",
+        "docker-compose.yml",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/eval_protocol.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "openapi.yaml",
+        "src/api/postprocessing.py",
+        "src/api/routes/eval_cer.py"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "error handling paths",
+      "files": [
+        ".claude/commands/opsx/apply.md",
+        ".claude/commands/opsx/archive.md",
+        ".claude/skills/openspec-apply-change/SKILL.md",
+        ".claude/skills/openspec-archive-change/SKILL.md",
+        "Dockerfile",
+        "docker-compose.yml",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/runbook.md",
+        "openapi.yaml"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 2,
+      "max_points": 2,
+      "reason": "configuration/env management",
+      "files": [
+        "README.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "requirements.txt",
+        "src/api/main.py",
+        "src/api/routes/transcribe.py",
+        "src/api/schemas.py",
+        "src/backends/mock.py",
+        "src/backends/registry.py",
+        "src/config/__init__.py"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "preprocessing layer",
+      "files": [
+        "README.md",
+        "docker-compose.yml",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "openapi.yaml",
+        "src/api/routes/transcribe.py",
+        "src/api/schemas.py",
+        "src/audio/__init__.py"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "chunking/batching/VAD consideration",
+      "files": [
+        "README.md",
+        "docs/architecture.md",
+        "docs/runbook.md",
+        "src/api/routes/eval_cer.py",
+        "src/eval/cer.py",
+        "src/eval/cer_runner.py",
+        "tests/unit/test_cer.py"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "model adapter boundary",
+      "files": [
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "openapi.yaml",
+        "src/api/routes/transcribe.py",
+        "src/backends/__init__.py",
+        "src/backends/base.py",
+        "src/backends/mock.py",
+        "src/backends/registry.py",
+        "src/config/settings.py",
+        "tests/unit/test_backends.py"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "postprocessing/transcript normalization",
+      "files": [
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "openapi.yaml",
+        "src/api/postprocessing.py",
+        "src/api/routes/transcribe.py",
+        "src/api/schemas.py",
+        "src/backends/base.py",
+        "tests/integration/test_transcribe.py",
+        "tests/unit/test_cer.py"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "async/queue/streaming extensibility",
+      "files": [
+        "docs/implementation_scope.md",
+        "requirements.txt",
+        "src/api/main.py",
+        "src/api/routes/eval_cer.py",
+        "src/api/routes/health.py",
+        "src/api/routes/metrics.py",
+        "src/api/routes/transcribe.py",
+        "src/observability/logging.py"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 5,
+      "max_points": 5,
+      "reason": "CER calculation implementation/reference",
+      "files": [
+        "README.md",
+        "docker-compose.yml",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/eval_protocol.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "openapi.yaml",
+        "src/api/main.py",
+        "src/api/routes/eval_cer.py"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 3,
+      "max_points": 3,
+      "reason": "manifest/reference/hypothesis support",
+      "files": [
+        ".claude/commands/opsx/explore.md",
+        ".claude/skills/openspec-explore/SKILL.md",
+        "README.md",
+        "docker-compose.yml",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/eval_protocol.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "openapi.yaml"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 3,
+      "max_points": 3,
+      "reason": "explicit CER normalization policy",
+      "files": [
+        "README.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/eval_protocol.md",
+        "openapi.yaml",
+        "src/api/main.py",
+        "src/api/postprocessing.py",
+        "src/api/routes/eval_cer.py",
+        "src/eval/cer.py",
+        "tests/unit/test_cer.py"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 2,
+      "max_points": 2,
+      "reason": "per-sample and aggregate metrics",
+      "files": [
+        ".claude/commands/opsx/archive.md",
+        ".claude/commands/opsx/explore.md",
+        ".claude/skills/openspec-archive-change/SKILL.md",
+        ".claude/skills/openspec-explore/SKILL.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "openapi.yaml",
+        "src/api/routes/eval_cer.py",
+        "src/api/schemas.py"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 2,
+      "max_points": 2,
+      "reason": "CER failure/edge-case handling",
+      "files": [
+        ".claude/commands/opsx/apply.md",
+        ".claude/commands/opsx/explore.md",
+        ".claude/skills/openspec-apply-change/SKILL.md",
+        ".claude/skills/openspec-explore/SKILL.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/eval_protocol.md",
+        "docs/runbook.md",
+        "openapi.yaml",
+        "src/api/routes/transcribe.py"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "API schema/OpenAPI clarity",
+      "files": [
+        ".claude/commands/opsx/apply.md",
+        ".claude/commands/opsx/archive.md",
+        ".claude/commands/opsx/explore.md",
+        ".claude/commands/opsx/propose.md",
+        ".claude/skills/openspec-apply-change/SKILL.md",
+        ".claude/skills/openspec-archive-change/SKILL.md",
+        ".claude/skills/openspec-explore/SKILL.md",
+        ".claude/skills/openspec-propose/SKILL.md",
+        "README.md",
+        "docs/api.md"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "latency measurement",
+      "files": [
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/runbook.md",
+        "openapi.yaml",
+        "src/api/routes/transcribe.py",
+        "src/api/schemas.py",
+        "src/audio/preprocessing.py",
+        "src/backends/mock.py",
+        "src/config/settings.py",
+        "src/observability/metrics.py"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "concurrency consideration",
+      "files": [
+        "requirements.txt",
+        "src/api/main.py",
+        "src/api/routes/eval_cer.py",
+        "src/api/routes/health.py",
+        "src/api/routes/metrics.py",
+        "src/api/routes/transcribe.py",
+        "src/observability/logging.py"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 2,
+      "max_points": 2,
+      "reason": "timeout/retry/backoff",
+      "files": [
+        "Dockerfile",
+        "docker-compose.yml"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 2,
+      "max_points": 2,
+      "reason": "streaming extension path",
+      "files": [
+        ".claude/commands/opsx/archive.md",
+        ".claude/skills/openspec-archive-change/SKILL.md",
+        "docs/implementation_scope.md",
+        "openapi.yaml",
+        "pytest.ini",
+        "src/api/routes/transcribe.py",
+        "src/audio/preprocessing.py",
+        "src/backends/base.py",
+        "src/eval/cer.py",
+        "src/observability/logging.py"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 2,
+      "max_points": 2,
+      "reason": "health and metrics endpoints",
+      "files": [
+        "Dockerfile",
+        "README.md",
+        "docker-compose.yml",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "openapi.yaml",
+        "requirements.txt",
+        "src/api/routes/health.py"
+      ]
+    },
+    {
+      "category": "tests",
+      "points": 3,
+      "max_points": 3,
+      "reason": "unit tests",
+      "files": [
+        "tests/unit/test_backends.py",
+        "tests/__init__.py",
+        "tests/integration/test_eval_cer.py",
+        "tests/integration/conftest.py",
+        "tests/integration/test_transcribe.py",
+        "tests/unit/test_cer.py",
+        "tests/integration/__init__.py",
+        "tests/unit/test_audio.py",
+        "tests/eval/__init__.py",
+        "tests/unit/__init__.py"
+      ]
+    },
+    {
+      "category": "tests",
+      "points": 3,
+      "max_points": 3,
+      "reason": "integration/API tests",
+      "files": [
+        "tests/unit/test_backends.py",
+        "tests/__init__.py",
+        "tests/integration/test_eval_cer.py",
+        "tests/integration/conftest.py",
+        "tests/integration/test_transcribe.py",
+        "tests/unit/test_cer.py",
+        "tests/integration/__init__.py",
+        "tests/unit/test_audio.py",
+        "tests/eval/__init__.py",
+        "tests/unit/__init__.py"
+      ]
+    },
+    {
+      "category": "tests",
+      "points": 2,
+      "max_points": 2,
+      "reason": "eval smoke tests",
+      "files": [
+        "README.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "tests/eval/test_cer_runner.py",
+        "tests/integration/test_eval_cer.py",
+        "tests/unit/test_cer.py"
+      ]
+    },
+    {
+      "category": "tests",
+      "points": 2,
+      "max_points": 2,
+      "reason": "CI-ready test command",
+      "files": [
+        ".claude/commands/opsx/apply.md",
+        ".claude/commands/opsx/archive.md",
+        ".claude/commands/opsx/explore.md",
+        ".claude/commands/opsx/propose.md",
+        ".claude/skills/openspec-apply-change/SKILL.md",
+        ".claude/skills/openspec-archive-change/SKILL.md",
+        ".claude/skills/openspec-explore/SKILL.md",
+        ".claude/skills/openspec-propose/SKILL.md",
+        "Dockerfile",
+        "README.md"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 3,
+      "max_points": 3,
+      "reason": "Docker or compose support",
+      "files": [
+        "Dockerfile",
+        "README.md",
+        "docker-compose.yml",
+        "docs/eval_protocol.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "tests/unit/test_cer.py"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 2,
+      "max_points": 2,
+      "reason": "structured logging/request tracing",
+      "files": [
+        ".claude/skills/openspec-explore/SKILL.md",
+        "README.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "openapi.yaml",
+        "src/api/main.py",
+        "src/api/routes/eval_cer.py",
+        "src/api/routes/health.py",
+        "src/api/routes/transcribe.py"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 2,
+      "max_points": 2,
+      "reason": "metrics",
+      "files": [
+        ".claude/commands/opsx/apply.md",
+        ".claude/skills/openspec-apply-change/SKILL.md",
+        "README.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "openapi.yaml",
+        "requirements.txt",
+        "src/api/main.py"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 2,
+      "max_points": 2,
+      "reason": "deployment/runbook",
+      "files": [
+        ".claude/skills/openspec-explore/SKILL.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 1,
+      "max_points": 1,
+      "reason": "rollback/fallback consideration",
+      "files": [
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "openapi.yaml",
+        "src/api/routes/health.py",
+        "src/backends/__init__.py",
+        "src/backends/mock.py",
+        "src/backends/registry.py",
+        "src/config/settings.py",
+        "tests/unit/test_backends.py"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 3,
+      "max_points": 3,
+      "reason": "module boundaries",
+      "files": [
+        "src/observability/logging.py",
+        "src/api/schemas.py",
+        "src/eval/cer.py",
+        "src/observability/metrics.py",
+        "src/api/__init__.py",
+        "src/config/__init__.py",
+        "src/backends/base.py",
+        "src/audio/preprocessing.py",
+        "src/backends/mock.py",
+        "src/__init__.py"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 2,
+      "max_points": 2,
+      "reason": "configuration separation",
+      "files": [
+        ".claude/commands/opsx/archive.md",
+        ".claude/commands/opsx/propose.md",
+        ".claude/skills/openspec-archive-change/SKILL.md",
+        ".claude/skills/openspec-explore/SKILL.md",
+        ".claude/skills/openspec-propose/SKILL.md",
+        "README.md",
+        "docker-compose.yml",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 2,
+      "max_points": 2,
+      "reason": "dependency management",
+      "files": [
+        "requirements.txt"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 2,
+      "max_points": 2,
+      "reason": "basic code organization/simplicity",
+      "files": [
+        "tests/unit/test_backends.py",
+        "src/observability/logging.py",
+        "tests/__init__.py",
+        "tests/integration/test_eval_cer.py",
+        "src/api/schemas.py",
+        "tests/integration/conftest.py",
+        "src/eval/cer.py",
+        "tests/integration/test_transcribe.py",
+        "src/observability/metrics.py",
+        "src/api/__init__.py"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 1,
+      "max_points": 1,
+      "reason": "model/vendor replacement path",
+      "files": [
+        "README.md",
+        "docker-compose.yml",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "openapi.yaml",
+        "src/api/main.py",
+        "src/api/postprocessing.py",
+        "src/api/routes/health.py"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "architecture documentation",
+      "files": [
+        "docs/architecture.md",
+        "README.md",
+        "docs/runbook.md"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "eval protocol",
+      "files": [
+        ".claude/commands/opsx/explore.md",
+        ".claude/skills/openspec-explore/SKILL.md",
+        "README.md",
+        "docker-compose.yml",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/eval_protocol.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "openapi.yaml"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "API usage examples",
+      "files": [
+        ".claude/commands/opsx/archive.md",
+        ".claude/skills/openspec-archive-change/SKILL.md",
+        ".claude/skills/openspec-propose/SKILL.md",
+        "Dockerfile",
+        "README.md",
+        "docker-compose.yml",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/eval_protocol.md",
+        "docs/implementation_scope.md"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "implementation scope documentation",
+      "files": [
+        "docs/implementation_scope.md",
+        "src/backends/base.py"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "known limitations",
+      "files": [
+        ".claude/commands/opsx/propose.md",
+        ".claude/skills/openspec-propose/SKILL.md"
+      ]
+    }
+  ],
+  "file_count_scanned": 56,
+  "label": "openspec",
+  "pytest": {
+    "available": true,
+    "passed": true,
+    "returncode": 0,
+    "command": "/home/beomgon/side/asr-pipeline-evaluator/outputs/openspec/.venv/bin/python -m pytest -q",
+    "stdout_tail": "============================= test session starts ==============================\nplatform linux -- Python 3.8.10, pytest-8.3.4, pluggy-1.5.0\nrootdir: /home/beomgon/side/asr-pipeline-evaluator/outputs/openspec\nconfigfile: pytest.ini\ntestpaths: tests\nplugins: asyncio-0.24.0, anyio-4.5.2\nasyncio: mode=strict, default_loop_scope=None\ncollected 83 items\n\ntests/eval/test_cer_runner.py .......                                    [  8%]\ntests/integration/test_eval_cer.py ........                              [ 18%]\ntests/integration/test_health.py ....                                    [ 22%]\ntests/integration/test_metrics.py ......                                 [ 30%]\ntests/integration/test_transcribe.py ............                        [ 44%]\ntests/unit/test_audio.py .......                                         [ 53%]\ntests/unit/test_backends.py .........                                    [ 63%]\ntests/unit/test_cer.py ..............................                    [100%]\n\n============================== 83 passed in 1.33s ==============================\n",
+    "stderr_tail": "/home/beomgon/side/asr-pipeline-evaluator/outputs/openspec/.venv/lib/python3.8/site-packages/pytest_asyncio/plugin.py:208: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  }
+}

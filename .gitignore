@@ -7,17 +7,9 @@ data/manifest.jsonl
 !data/labels/.gitkeep
 
 # --- Bakeoff outputs / reports ---------------------------------------------
-# Candidate outputs and evaluator reports are produced per-run; do not track.
+# outputs/ is excluded (re-generatable); reports/ and workspaces/ are tracked.
 outputs/*/*
 !outputs/*/.gitkeep
-reports/*
-!reports/.gitkeep
-
-# --- Framework workspaces ---------------------------------------------------
-# Spec Kit / OpenSpec / GSD / BMAD install into their own workspace and may
-# create lockfiles, caches, and tool-specific state. Keep only placeholders.
-workspaces/*/*
-!workspaces/*/.gitkeep
 
 # --- Python -----------------------------------------------------------------
 __pycache__/

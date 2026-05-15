@@ -1,0 +1,49 @@
+{
+  "aggregate": {
+    "samples": 3,
+    "errors": 2,
+    "reference_chars": 52,
+    "cer": 0.038461538461538464
+  },
+  "per_sample": [
+    {
+      "reference": "hello world",
+      "hypothesis": "helo world",
+      "normalized_reference": "helloworld",
+      "normalized_hypothesis": "heloworld",
+      "substitutions": 0,
+      "deletions": 1,
+      "insertions": 0,
+      "reference_chars": 10,
+      "cer": 0.1,
+      "errors": 1,
+      "id": "sample_001"
+    },
+    {
+      "reference": "speech recognition serving",
+      "hypothesis": "speech recognition serving",
+      "normalized_reference": "speechrecognitionserving",
+      "normalized_hypothesis": "speechrecognitionserving",
+      "substitutions": 0,
+      "deletions": 0,
+      "insertions": 0,
+      "reference_chars": 24,
+      "cer": 0.0,
+      "errors": 0,
+      "id": "sample_002"
+    },
+    {
+      "reference": "character error rate",
+      "hypothesis": "character eror rate",
+      "normalized_reference": "charactererrorrate",
+      "normalized_hypothesis": "charactererorrate",
+      "substitutions": 0,
+      "deletions": 1,
+      "insertions": 0,
+      "reference_chars": 18,
+      "cer": 0.05555555555555555,
+      "errors": 1,
+      "id": "sample_003"
+    }
+  ]
+}

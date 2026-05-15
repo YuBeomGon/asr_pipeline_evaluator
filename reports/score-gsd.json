@@ -1,0 +1,773 @@
+{
+  "target": "/home/beomgon/side/asr-pipeline-evaluator/outputs/gsd",
+  "total_score": 100.0,
+  "weights": {
+    "functionality": 20.0,
+    "asr_pipeline_structure": 15.0,
+    "cer_evaluation": 15.0,
+    "serving_api_quality": 15.0,
+    "tests": 10.0,
+    "operations": 10.0,
+    "maintainability": 10.0,
+    "documentation": 5.0
+  },
+  "category_scores": {
+    "functionality": 20.0,
+    "asr_pipeline_structure": 15.0,
+    "cer_evaluation": 15.0,
+    "serving_api_quality": 15.0,
+    "tests": 10.0,
+    "operations": 10.0,
+    "maintainability": 10.0,
+    "documentation": 5.0
+  },
+  "raw_category_points": {
+    "functionality": 20.0,
+    "asr_pipeline_structure": 15.0,
+    "cer_evaluation": 15.0,
+    "serving_api_quality": 15.0,
+    "tests": 10.0,
+    "operations": 10.0,
+    "maintainability": 10.0,
+    "documentation": 5.0
+  },
+  "raw_category_max": {
+    "functionality": 20.0,
+    "asr_pipeline_structure": 15.0,
+    "cer_evaluation": 15.0,
+    "serving_api_quality": 15.0,
+    "tests": 10.0,
+    "operations": 10.0,
+    "maintainability": 10.0,
+    "documentation": 5.0
+  },
+  "evidence": [
+    {
+      "category": "functionality",
+      "points": 5,
+      "max_points": 5,
+      "reason": "transcription endpoint or handler",
+      "files": [
+        "README.md",
+        "TASKS.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "src/api/routes/transcribe.py",
+        "src/api/schemas.py",
+        "src/backends/base.py",
+        "src/backends/mock.py"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "audio upload/input handling",
+      "files": [
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-phase-researcher.md",
+        ".claude/agents/gsd-plan-checker.md",
+        ".claude/agents/gsd-planner.md",
+        ".claude/commands/gsd/docs-update.md",
+        ".claude/commands/gsd/execute-phase.md",
+        ".claude/get-shit-done/references/agent-contracts.md",
+        ".claude/get-shit-done/references/checkpoints.md",
+        ".claude/get-shit-done/references/execute-mvp-tdd.md",
+        ".claude/get-shit-done/references/few-shot-examples/plan-checker.md"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 4,
+      "max_points": 4,
+      "reason": "ASR backend abstraction",
+      "files": [
+        "README.md",
+        "TASKS.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "src/api/routes/transcribe.py",
+        "src/backends/__init__.py",
+        "src/backends/base.py",
+        "src/backends/mock.py"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "response schema includes transcript/confidence/request/timing fields",
+      "files": [
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-assumptions-analyzer.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-classifier.md",
+        ".claude/agents/gsd-doc-synthesizer.md",
+        ".claude/agents/gsd-eval-auditor.md",
+        ".claude/agents/gsd-eval-planner.md",
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-phase-researcher.md",
+        ".claude/agents/gsd-plan-checker.md"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "error handling paths",
+      "files": [
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-integration-checker.md",
+        ".claude/agents/gsd-intel-updater.md",
+        ".claude/agents/gsd-nyquist-auditor.md",
+        ".claude/agents/gsd-pattern-mapper.md"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 2,
+      "max_points": 2,
+      "reason": "configuration/env management",
+      "files": [
+        ".claude/agents/gsd-advisor-researcher.md",
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-verifier.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-eval-auditor.md",
+        ".claude/agents/gsd-eval-planner.md"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "preprocessing layer",
+      "files": [
+        "README.md",
+        "TASKS.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "src/api/routes/transcribe.py",
+        "src/api/schemas.py",
+        "src/audio/processor.py",
+        "src/backends/base.py",
+        "src/backends/mock.py"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "chunking/batching/VAD consideration",
+      "files": [
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-eval-planner.md",
+        ".claude/agents/gsd-intel-updater.md",
+        ".claude/agents/gsd-pattern-mapper.md",
+        ".claude/agents/gsd-phase-researcher.md",
+        ".claude/agents/gsd-plan-checker.md",
+        ".claude/agents/gsd-planner.md",
+        ".claude/agents/gsd-ui-researcher.md"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "model adapter boundary",
+      "files": [
+        "README.md",
+        "TASKS.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "src/api/routes/transcribe.py",
+        "src/backends/__init__.py",
+        "src/backends/base.py",
+        "src/backends/mock.py"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "postprocessing/transcript normalization",
+      "files": [
+        ".claude/agents/gsd-verifier.md",
+        ".claude/get-shit-done/references/verification-overrides.md",
+        ".claude/get-shit-done/templates/research.md",
+        ".claude/get-shit-done/workflows/graduation.md",
+        ".claude/get-shit-done/workflows/plant-seed.md",
+        "TASKS.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "src/api/routes/transcribe.py"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "async/queue/streaming extensibility",
+      "files": [
+        ".claude/agents/gsd-advisor-researcher.md",
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-synthesizer.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-domain-researcher.md",
+        ".claude/agents/gsd-executor.md"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 5,
+      "max_points": 5,
+      "reason": "CER calculation implementation/reference",
+      "files": [
+        "README.md",
+        "TASKS.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/eval_protocol.md",
+        "docs/implementation_scope.md",
+        "docs/runbook.md",
+        "src/api/main.py",
+        "src/api/routes/eval.py",
+        "src/api/schemas.py"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 3,
+      "max_points": 3,
+      "reason": "manifest/reference/hypothesis support",
+      "files": [
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debug-session-manager.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-classifier.md",
+        ".claude/agents/gsd-doc-synthesizer.md",
+        ".claude/agents/gsd-doc-verifier.md",
+        ".claude/agents/gsd-doc-writer.md"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 3,
+      "max_points": 3,
+      "reason": "explicit CER normalization policy",
+      "files": [
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-synthesizer.md",
+        ".claude/agents/gsd-eval-auditor.md",
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-planner.md",
+        ".claude/agents/gsd-roadmapper.md",
+        ".claude/agents/gsd-verifier.md",
+        ".claude/commands/gsd/complete-milestone.md",
+        ".claude/commands/gsd/debug.md"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 2,
+      "max_points": 2,
+      "reason": "per-sample and aggregate metrics",
+      "files": [
+        ".claude/agents/gsd-assumptions-analyzer.md",
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debug-session-manager.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-classifier.md",
+        ".claude/agents/gsd-doc-synthesizer.md",
+        ".claude/agents/gsd-doc-verifier.md",
+        ".claude/agents/gsd-doc-writer.md"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 2,
+      "max_points": 2,
+      "reason": "CER failure/edge-case handling",
+      "files": [
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-assumptions-analyzer.md",
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-classifier.md",
+        ".claude/agents/gsd-doc-verifier.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-domain-researcher.md"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "API schema/OpenAPI clarity",
+      "files": [
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-doc-classifier.md",
+        ".claude/agents/gsd-doc-synthesizer.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-eval-planner.md",
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-intel-updater.md",
+        ".claude/agents/gsd-pattern-mapper.md",
+        ".claude/agents/gsd-phase-researcher.md"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "latency measurement",
+      "files": [
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-eval-planner.md",
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-plan-checker.md",
+        ".claude/get-shit-done/references/ai-evals.md",
+        ".claude/get-shit-done/references/ai-frameworks.md",
+        ".claude/get-shit-done/references/domain-probes.md",
+        ".claude/get-shit-done/references/thinking-partner.md",
+        ".claude/get-shit-done/references/user-profiling.md"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "concurrency consideration",
+      "files": [
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-pattern-mapper.md",
+        ".claude/agents/gsd-phase-researcher.md",
+        ".claude/agents/gsd-verifier.md"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 2,
+      "max_points": 2,
+      "reason": "timeout/retry/backoff",
+      "files": [
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-debug-session-manager.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-verifier.md",
+        ".claude/commands/gsd/config.md",
+        ".claude/commands/gsd/graphify.md",
+        ".claude/get-shit-done/references/checkpoints.md",
+        ".claude/get-shit-done/references/common-bug-patterns.md",
+        ".claude/get-shit-done/references/gate-prompts.md"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 2,
+      "max_points": 2,
+      "reason": "streaming extension path",
+      "files": [
+        ".claude/agents/gsd-advisor-researcher.md",
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-assumptions-analyzer.md",
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-synthesizer.md",
+        ".claude/agents/gsd-doc-verifier.md",
+        ".claude/agents/gsd-doc-writer.md"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 2,
+      "max_points": 2,
+      "reason": "health and metrics endpoints",
+      "files": [
+        ".claude/commands/gsd/health.md",
+        ".claude/get-shit-done/workflows/health.md",
+        ".claude/gsd-file-manifest.json",
+        "README.md",
+        "TASKS.md",
+        "docker-compose.yml",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/prometheus.yml"
+      ]
+    },
+    {
+      "category": "tests",
+      "points": 3,
+      "max_points": 3,
+      "reason": "unit tests",
+      "files": [
+        "tests/unit/test_cer.py",
+        "tests/__init__.py",
+        "tests/unit/test_normalizer.py",
+        "tests/unit/__init__.py",
+        "tests/integration/test_api.py",
+        "tests/eval/__init__.py",
+        "tests/eval/test_eval_smoke.py",
+        "tests/integration/__init__.py"
+      ]
+    },
+    {
+      "category": "tests",
+      "points": 3,
+      "max_points": 3,
+      "reason": "integration/API tests",
+      "files": [
+        "tests/unit/test_cer.py",
+        "tests/__init__.py",
+        "tests/unit/test_normalizer.py",
+        "tests/unit/__init__.py",
+        "tests/integration/test_api.py",
+        "tests/eval/__init__.py",
+        "tests/eval/test_eval_smoke.py",
+        "tests/integration/__init__.py"
+      ]
+    },
+    {
+      "category": "tests",
+      "points": 2,
+      "max_points": 2,
+      "reason": "eval smoke tests",
+      "files": [
+        ".claude/agents/gsd-debugger.md",
+        ".claude/get-shit-done/references/thinking-models-execution.md",
+        ".claude/get-shit-done/workflows/help.md",
+        "TASKS.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "tests/eval/test_eval_smoke.py",
+        "tests/integration/test_api.py",
+        "tests/unit/test_cer.py",
+        "tests/unit/test_normalizer.py"
+      ]
+    },
+    {
+      "category": "tests",
+      "points": 2,
+      "max_points": 2,
+      "reason": "CI-ready test command",
+      "files": [
+        ".claude/agents/gsd-advisor-researcher.md",
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-assumptions-analyzer.md",
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debug-session-manager.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-classifier.md",
+        ".claude/agents/gsd-doc-synthesizer.md"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 3,
+      "max_points": 3,
+      "reason": "Docker or compose support",
+      "files": [
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-intel-updater.md",
+        ".claude/agents/gsd-phase-researcher.md",
+        ".claude/agents/gsd-plan-checker.md",
+        ".claude/agents/gsd-planner.md",
+        ".claude/agents/gsd-roadmapper.md",
+        ".claude/commands/gsd/surface.md",
+        ".claude/get-shit-done/references/model-profiles.md"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 2,
+      "max_points": 2,
+      "reason": "structured logging/request tracing",
+      "files": [
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-synthesizer.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-eval-auditor.md",
+        ".claude/agents/gsd-eval-planner.md",
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-integration-checker.md",
+        ".claude/agents/gsd-pattern-mapper.md"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 2,
+      "max_points": 2,
+      "reason": "metrics",
+      "files": [
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-classifier.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-eval-auditor.md",
+        ".claude/agents/gsd-eval-planner.md",
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-intel-updater.md"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 2,
+      "max_points": 2,
+      "reason": "deployment/runbook",
+      "files": [
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-classifier.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-domain-researcher.md",
+        ".claude/agents/gsd-eval-auditor.md",
+        ".claude/agents/gsd-planner.md",
+        ".claude/get-shit-done/references/ai-evals.md",
+        ".claude/get-shit-done/references/checkpoints.md",
+        ".claude/get-shit-done/references/common-bug-patterns.md"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 1,
+      "max_points": 1,
+      "reason": "rollback/fallback consideration",
+      "files": [
+        ".claude/agents/gsd-advisor-researcher.md",
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-domain-researcher.md",
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-intel-updater.md"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 3,
+      "max_points": 3,
+      "reason": "module boundaries",
+      "files": [
+        "src/eval/cer.py",
+        "src/backends/base.py",
+        "src/api/routes/metrics_route.py",
+        "src/api/main.py",
+        "src/api/routes/transcribe.py",
+        "src/api/schemas.py",
+        "src/api/routes/__init__.py",
+        "src/config/settings.py",
+        "src/api/routes/health.py",
+        "src/eval/cer_runner.py"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 2,
+      "max_points": 2,
+      "reason": "configuration separation",
+      "files": [
+        ".claude/agents/gsd-advisor-researcher.md",
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-classifier.md",
+        ".claude/agents/gsd-doc-verifier.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-domain-researcher.md"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 2,
+      "max_points": 2,
+      "reason": "dependency management",
+      "files": [
+        "requirements.txt"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 2,
+      "max_points": 2,
+      "reason": "basic code organization/simplicity",
+      "files": [
+        "src/eval/cer.py",
+        "tests/unit/test_cer.py",
+        "tests/__init__.py",
+        "tests/unit/test_normalizer.py",
+        "src/backends/base.py",
+        "src/api/routes/metrics_route.py",
+        "src/api/main.py",
+        "conftest.py",
+        "src/api/routes/transcribe.py",
+        "src/api/schemas.py"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 1,
+      "max_points": 1,
+      "reason": "model/vendor replacement path",
+      "files": [
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-phase-researcher.md",
+        ".claude/agents/gsd-plan-checker.md",
+        ".claude/agents/gsd-planner.md",
+        ".claude/get-shit-done/references/checkpoints.md",
+        ".claude/get-shit-done/references/common-bug-patterns.md",
+        ".claude/get-shit-done/references/git-integration.md",
+        ".claude/get-shit-done/references/scout-codebase.md",
+        ".claude/get-shit-done/references/sketch-interactivity.md"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "architecture documentation",
+      "files": [
+        ".claude/get-shit-done/templates/codebase/architecture.md",
+        "docs/runbook.md",
+        "docs/architecture.md",
+        ".claude/get-shit-done/templates/research-project/ARCHITECTURE.md",
+        ".claude/get-shit-done/templates/README.md",
+        "README.md"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "eval protocol",
+      "files": [
+        ".claude/agents/gsd-ai-researcher.md",
+        ".claude/agents/gsd-code-fixer.md",
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debug-session-manager.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-classifier.md",
+        ".claude/agents/gsd-doc-synthesizer.md",
+        ".claude/agents/gsd-doc-verifier.md",
+        ".claude/agents/gsd-doc-writer.md"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "API usage examples",
+      "files": [
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-debugger.md",
+        ".claude/agents/gsd-doc-classifier.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-eval-auditor.md",
+        ".claude/agents/gsd-eval-planner.md",
+        ".claude/agents/gsd-pattern-mapper.md",
+        ".claude/agents/gsd-phase-researcher.md",
+        ".claude/agents/gsd-planner.md",
+        ".claude/agents/gsd-ui-auditor.md"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "implementation scope documentation",
+      "files": [
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-doc-writer.md",
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-pattern-mapper.md",
+        ".claude/agents/gsd-phase-researcher.md",
+        ".claude/agents/gsd-plan-checker.md",
+        ".claude/agents/gsd-planner.md",
+        ".claude/agents/gsd-roadmapper.md",
+        ".claude/agents/gsd-ui-checker.md",
+        ".claude/agents/gsd-ui-researcher.md"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "known limitations",
+      "files": [
+        ".claude/agents/gsd-code-reviewer.md",
+        ".claude/agents/gsd-codebase-mapper.md",
+        ".claude/agents/gsd-executor.md",
+        ".claude/agents/gsd-plan-checker.md",
+        ".claude/agents/gsd-planner.md",
+        ".claude/agents/gsd-project-researcher.md",
+        ".claude/agents/gsd-roadmapper.md",
+        ".claude/agents/gsd-verifier.md",
+        ".claude/commands/gsd/capture.md",
+        ".claude/commands/gsd/execute-phase.md"
+      ]
+    }
+  ],
+  "file_count_scanned": 375,
+  "label": "gsd",
+  "pytest": {
+    "available": true,
+    "passed": true,
+    "returncode": 0,
+    "command": "/home/beomgon/side/asr-pipeline-evaluator/outputs/gsd/.venv/bin/python -m pytest -q",
+    "stdout_tail": "..........................................                               [100%]\n42 passed in 1.25s\n",
+    "stderr_tail": ""
+  }
+}

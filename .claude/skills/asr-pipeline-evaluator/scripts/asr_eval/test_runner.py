@@ -13,12 +13,20 @@ def has_tests(target: Path) -> bool:
     return any(p.name.startswith("test_") and p.suffix == ".py" for p in target.rglob("*.py"))
 
 
+def _find_python(target: Path) -> str:
+    for candidate in [target / ".venv" / "bin" / "python", target / ".venv" / "bin" / "python3"]:
+        if candidate.exists():
+            return str(candidate)
+    return sys.executable
+
+
 def run_pytest(target: str | Path, timeout_seconds: int = 120) -> dict:
     target = Path(target).resolve()
     if not has_tests(target):
         return {"available": False, "passed": False, "reason": "no tests detected"}
 
-    cmd = [sys.executable, "-m", "pytest", "-q"]
+    python = _find_python(target)
+    cmd = [python, "-m", "pytest", "-q"]
     try:
         proc = subprocess.run(
             cmd,

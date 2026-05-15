@@ -1,0 +1,774 @@
+{
+  "target": "/home/beomgon/side/asr-pipeline-evaluator/outputs/bmad",
+  "total_score": 100.0,
+  "weights": {
+    "functionality": 20.0,
+    "asr_pipeline_structure": 15.0,
+    "cer_evaluation": 15.0,
+    "serving_api_quality": 15.0,
+    "tests": 10.0,
+    "operations": 10.0,
+    "maintainability": 10.0,
+    "documentation": 5.0
+  },
+  "category_scores": {
+    "functionality": 20.0,
+    "asr_pipeline_structure": 15.0,
+    "cer_evaluation": 15.0,
+    "serving_api_quality": 15.0,
+    "tests": 10.0,
+    "operations": 10.0,
+    "maintainability": 10.0,
+    "documentation": 5.0
+  },
+  "raw_category_points": {
+    "functionality": 20.0,
+    "asr_pipeline_structure": 15.0,
+    "cer_evaluation": 15.0,
+    "serving_api_quality": 15.0,
+    "tests": 10.0,
+    "operations": 10.0,
+    "maintainability": 10.0,
+    "documentation": 5.0
+  },
+  "raw_category_max": {
+    "functionality": 20.0,
+    "asr_pipeline_structure": 15.0,
+    "cer_evaluation": 15.0,
+    "serving_api_quality": 15.0,
+    "tests": 10.0,
+    "operations": 10.0,
+    "maintainability": 10.0,
+    "documentation": 5.0
+  },
+  "evidence": [
+    {
+      "category": "functionality",
+      "points": 5,
+      "max_points": 5,
+      "reason": "transcription endpoint or handler",
+      "files": [
+        "README.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/eval_protocol.md",
+        "docs/implementation_scope.md",
+        "docs/pm-brief.md",
+        "docs/qa-checklist.md",
+        "docs/runbook.md",
+        "src/api/models.py",
+        "src/api/routes/transcribe.py"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "audio upload/input handling",
+      "files": [
+        ".claude/skills/bmad-prfaq/references/internal-faq.md",
+        ".claude/skills/bmad-product-brief/prompts/draft-and-review.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/eval_protocol.md",
+        "docs/implementation_scope.md",
+        "docs/pm-brief.md",
+        "docs/qa-checklist.md",
+        "docs/runbook.md",
+        "requirements.txt"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 4,
+      "max_points": 4,
+      "reason": "ASR backend abstraction",
+      "files": [
+        "README.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/pm-brief.md",
+        "docs/qa-checklist.md",
+        "docs/runbook.md",
+        "src/backends/__init__.py",
+        "src/backends/base.py",
+        "src/backends/mock.py",
+        "src/backends/registry.py"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "response schema includes transcript/confidence/request/timing fields",
+      "files": [
+        ".claude/skills/bmad-brainstorming/steps/step-02a-user-selected.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02b-ai-recommended.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02c-random-selection.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02d-progressive-flow.md",
+        ".claude/skills/bmad-brainstorming/steps/step-04-idea-organization.md",
+        ".claude/skills/bmad-check-implementation-readiness/steps/step-05-epic-quality-review.md",
+        ".claude/skills/bmad-checkpoint-preview/step-04-testing.md",
+        ".claude/skills/bmad-create-architecture/steps/step-05-patterns.md",
+        ".claude/skills/bmad-create-architecture/steps/step-07-validation.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-05-domain.md"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "error handling paths",
+      "files": [
+        ".claude/skills/bmad-check-implementation-readiness/SKILL.md",
+        ".claude/skills/bmad-check-implementation-readiness/steps/step-02-prd-analysis.md",
+        ".claude/skills/bmad-check-implementation-readiness/steps/step-05-epic-quality-review.md",
+        ".claude/skills/bmad-checkpoint-preview/step-02-walkthrough.md",
+        ".claude/skills/bmad-checkpoint-preview/step-03-detail-pass.md",
+        ".claude/skills/bmad-checkpoint-preview/step-04-testing.md",
+        ".claude/skills/bmad-code-review/SKILL.md",
+        ".claude/skills/bmad-correct-course/checklist.md",
+        ".claude/skills/bmad-create-architecture/steps/step-04-decisions.md",
+        ".claude/skills/bmad-create-architecture/steps/step-05-patterns.md"
+      ]
+    },
+    {
+      "category": "functionality",
+      "points": 2,
+      "max_points": 2,
+      "reason": "configuration/env management",
+      "files": [
+        ".claude/skills/bmad-advanced-elicitation/SKILL.md",
+        ".claude/skills/bmad-agent-analyst/SKILL.md",
+        ".claude/skills/bmad-agent-analyst/customize.toml",
+        ".claude/skills/bmad-agent-architect/SKILL.md",
+        ".claude/skills/bmad-agent-architect/customize.toml",
+        ".claude/skills/bmad-agent-dev/SKILL.md",
+        ".claude/skills/bmad-agent-dev/customize.toml",
+        ".claude/skills/bmad-agent-pm/SKILL.md",
+        ".claude/skills/bmad-agent-pm/customize.toml",
+        ".claude/skills/bmad-agent-tech-writer/SKILL.md"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "preprocessing layer",
+      "files": [
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/pm-brief.md",
+        "docs/qa-checklist.md",
+        "src/api/models.py",
+        "src/api/routes/transcribe.py",
+        "src/audio/__init__.py",
+        "src/audio/preprocessor.py",
+        "src/backends/base.py"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "chunking/batching/VAD consideration",
+      "files": [
+        ".claude/skills/bmad-code-review/steps/step-01-gather-context.md",
+        ".claude/skills/bmad-code-review/steps/step-04-present.md",
+        ".claude/skills/bmad-correct-course/SKILL.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-05-domain.md",
+        ".claude/skills/bmad-document-project/checklist.md",
+        ".claude/skills/bmad-document-project/templates/project-scan-report-schema.json",
+        ".claude/skills/bmad-document-project/workflows/full-scan-instructions.md",
+        ".claude/skills/bmad-help/SKILL.md",
+        ".claude/skills/bmad-validate-prd/steps-v/step-v-09-project-type-validation.md",
+        "README.md"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "model adapter boundary",
+      "files": [
+        "README.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/pm-brief.md",
+        "docs/qa-checklist.md",
+        "docs/runbook.md",
+        "src/backends/__init__.py",
+        "src/backends/base.py",
+        "src/backends/mock.py",
+        "src/backends/registry.py"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "postprocessing/transcript normalization",
+      "files": [
+        "README.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/eval_protocol.md",
+        "docs/implementation_scope.md",
+        "docs/pm-brief.md",
+        "docs/qa-checklist.md",
+        "src/api/models.py",
+        "src/api/routes/transcribe.py",
+        "src/backends/mock.py"
+      ]
+    },
+    {
+      "category": "asr_pipeline_structure",
+      "points": 3,
+      "max_points": 3,
+      "reason": "async/queue/streaming extensibility",
+      "files": [
+        ".claude/skills/bmad-check-implementation-readiness/steps/step-02-prd-analysis.md",
+        ".claude/skills/bmad-checkpoint-preview/generate-trail.md",
+        ".claude/skills/bmad-create-architecture/steps/step-03-starter.md",
+        ".claude/skills/bmad-create-architecture/steps/step-05-patterns.md",
+        ".claude/skills/bmad-create-prd/data/prd-purpose.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-09-functional.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-10-nonfunctional.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-12-complete.md",
+        ".claude/skills/bmad-distillator/SKILL.md",
+        ".claude/skills/bmad-distillator/agents/distillate-compressor.md"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 5,
+      "max_points": 5,
+      "reason": "CER calculation implementation/reference",
+      "files": [
+        "README.md",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/eval_protocol.md",
+        "docs/implementation_scope.md",
+        "docs/pm-brief.md",
+        "docs/qa-checklist.md",
+        "docs/runbook.md",
+        "src/api/main.py",
+        "src/api/models.py"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 3,
+      "max_points": 3,
+      "reason": "manifest/reference/hypothesis support",
+      "files": [
+        ".claude/skills/bmad-agent-analyst/SKILL.md",
+        ".claude/skills/bmad-agent-analyst/customize.toml",
+        ".claude/skills/bmad-agent-architect/SKILL.md",
+        ".claude/skills/bmad-agent-architect/customize.toml",
+        ".claude/skills/bmad-agent-dev/SKILL.md",
+        ".claude/skills/bmad-agent-dev/customize.toml",
+        ".claude/skills/bmad-agent-pm/SKILL.md",
+        ".claude/skills/bmad-agent-pm/customize.toml",
+        ".claude/skills/bmad-agent-tech-writer/SKILL.md",
+        ".claude/skills/bmad-agent-tech-writer/customize.toml"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 3,
+      "max_points": 3,
+      "reason": "explicit CER normalization policy",
+      "files": [
+        ".claude/skills/bmad-checkpoint-preview/generate-trail.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-10-nonfunctional.md",
+        ".claude/skills/bmad-create-ux-design/steps/step-13-responsive-accessibility.md",
+        ".claude/skills/bmad-customize/scripts/list_customizable_skills.py",
+        ".claude/skills/bmad-distillator/resources/distillate-format-reference.md",
+        ".claude/skills/bmad-distillator/scripts/analyze_sources.py",
+        ".claude/skills/bmad-document-project/checklist.md",
+        ".claude/skills/bmad-domain-research/SKILL.md",
+        ".claude/skills/bmad-editorial-review-structure/SKILL.md",
+        ".claude/skills/bmad-market-research/SKILL.md"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 2,
+      "max_points": 2,
+      "reason": "per-sample and aggregate metrics",
+      "files": [
+        ".claude/skills/bmad-brainstorming/steps/step-01b-continue.md",
+        ".claude/skills/bmad-brainstorming/steps/step-03-technique-execution.md",
+        ".claude/skills/bmad-brainstorming/steps/step-04-idea-organization.md",
+        ".claude/skills/bmad-check-implementation-readiness/steps/step-06-final-assessment.md",
+        ".claude/skills/bmad-checkpoint-preview/step-01-orientation.md",
+        ".claude/skills/bmad-checkpoint-preview/step-03-detail-pass.md",
+        ".claude/skills/bmad-code-review/steps/step-01-gather-context.md",
+        ".claude/skills/bmad-code-review/steps/step-03-triage.md",
+        ".claude/skills/bmad-code-review/steps/step-04-present.md",
+        ".claude/skills/bmad-correct-course/SKILL.md"
+      ]
+    },
+    {
+      "category": "cer_evaluation",
+      "points": 2,
+      "max_points": 2,
+      "reason": "CER failure/edge-case handling",
+      "files": [
+        ".claude/skills/bmad-agent-analyst/SKILL.md",
+        ".claude/skills/bmad-agent-architect/SKILL.md",
+        ".claude/skills/bmad-agent-dev/SKILL.md",
+        ".claude/skills/bmad-agent-pm/SKILL.md",
+        ".claude/skills/bmad-agent-tech-writer/SKILL.md",
+        ".claude/skills/bmad-agent-ux-designer/SKILL.md",
+        ".claude/skills/bmad-brainstorming/steps/step-01-session-setup.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02a-user-selected.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02b-ai-recommended.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02c-random-selection.md"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "API schema/OpenAPI clarity",
+      "files": [
+        ".claude/skills/bmad-agent-tech-writer/SKILL.md",
+        ".claude/skills/bmad-checkpoint-preview/step-02-walkthrough.md",
+        ".claude/skills/bmad-checkpoint-preview/step-03-detail-pass.md",
+        ".claude/skills/bmad-correct-course/checklist.md",
+        ".claude/skills/bmad-create-architecture/steps/step-06-structure.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-07-project-type.md",
+        ".claude/skills/bmad-create-story/SKILL.md",
+        ".claude/skills/bmad-create-story/checklist.md",
+        ".claude/skills/bmad-document-project/checklist.md",
+        ".claude/skills/bmad-document-project/templates/deep-dive-template.md"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "latency measurement",
+      "files": [
+        ".claude/skills/bmad-brainstorming/steps/step-02a-user-selected.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02b-ai-recommended.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02c-random-selection.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02d-progressive-flow.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-05-domain.md",
+        ".claude/skills/bmad-document-project/workflows/deep-dive-instructions.md",
+        ".claude/skills/bmad-market-research/steps/step-04-customer-decisions.md",
+        ".claude/skills/bmad-retrospective/SKILL.md",
+        "docs/api.md",
+        "docs/architecture.md"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 3,
+      "max_points": 3,
+      "reason": "concurrency consideration",
+      "files": [
+        ".claude/skills/bmad-check-implementation-readiness/steps/step-02-prd-analysis.md",
+        ".claude/skills/bmad-create-architecture/steps/step-03-starter.md",
+        ".claude/skills/bmad-create-architecture/steps/step-05-patterns.md",
+        ".claude/skills/bmad-create-prd/data/prd-purpose.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-10-nonfunctional.md",
+        ".claude/skills/bmad-document-project/workflows/full-scan-instructions.md",
+        ".claude/skills/bmad-edit-prd/data/prd-purpose.md",
+        ".claude/skills/bmad-generate-project-context/steps/step-01-discover.md",
+        ".claude/skills/bmad-party-mode/SKILL.md",
+        ".claude/skills/bmad-technical-research/technical-steps/step-03-integration-patterns.md"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 2,
+      "max_points": 2,
+      "reason": "timeout/retry/backoff",
+      "files": [
+        ".claude/skills/bmad-create-architecture/steps/step-05-patterns.md",
+        ".claude/skills/bmad-party-mode/SKILL.md",
+        ".claude/skills/bmad-quick-dev/SKILL.md",
+        ".claude/skills/bmad-review-edge-case-hunter/SKILL.md",
+        ".claude/skills/bmad-technical-research/technical-steps/step-03-integration-patterns.md",
+        "Dockerfile",
+        "docker-compose.yml"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 2,
+      "max_points": 2,
+      "reason": "streaming extension path",
+      "files": [
+        ".claude/skills/bmad-advanced-elicitation/SKILL.md",
+        ".claude/skills/bmad-agent-analyst/SKILL.md",
+        ".claude/skills/bmad-agent-architect/SKILL.md",
+        ".claude/skills/bmad-agent-dev/SKILL.md",
+        ".claude/skills/bmad-agent-pm/SKILL.md",
+        ".claude/skills/bmad-agent-tech-writer/SKILL.md",
+        ".claude/skills/bmad-agent-ux-designer/SKILL.md",
+        ".claude/skills/bmad-brainstorming/steps/step-01b-continue.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02b-ai-recommended.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02d-progressive-flow.md"
+      ]
+    },
+    {
+      "category": "serving_api_quality",
+      "points": 2,
+      "max_points": 2,
+      "reason": "health and metrics endpoints",
+      "files": [
+        "Dockerfile",
+        "README.md",
+        "docker-compose.yml",
+        "docs/api.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/pm-brief.md",
+        "docs/qa-checklist.md",
+        "docs/runbook.md",
+        "requirements.txt"
+      ]
+    },
+    {
+      "category": "tests",
+      "points": 3,
+      "max_points": 3,
+      "reason": "unit tests",
+      "files": [
+        "tests/unit/test_cer.py",
+        "tests/__init__.py",
+        ".claude/skills/bmad-customize/scripts/tests/test_list_customizable_skills.py",
+        "tests/integration/test_health.py",
+        "tests/unit/test_normalization.py",
+        "tests/conftest.py",
+        "tests/unit/__init__.py",
+        ".claude/skills/bmad-distillator/scripts/tests/test_analyze_sources.py",
+        "tests/eval/__init__.py",
+        "tests/integration/test_transcribe.py"
+      ]
+    },
+    {
+      "category": "tests",
+      "points": 3,
+      "max_points": 3,
+      "reason": "integration/API tests",
+      "files": [
+        "tests/unit/test_cer.py",
+        "tests/__init__.py",
+        ".claude/skills/bmad-customize/scripts/tests/test_list_customizable_skills.py",
+        "tests/integration/test_health.py",
+        "tests/unit/test_normalization.py",
+        "tests/conftest.py",
+        "tests/unit/__init__.py",
+        ".claude/skills/bmad-distillator/scripts/tests/test_analyze_sources.py",
+        "tests/eval/__init__.py",
+        "tests/integration/test_transcribe.py"
+      ]
+    },
+    {
+      "category": "tests",
+      "points": 2,
+      "max_points": 2,
+      "reason": "eval smoke tests",
+      "files": [
+        ".claude/skills/bmad-checkpoint-preview/generate-trail.md",
+        ".claude/skills/bmad-retrospective/SKILL.md",
+        "README.md",
+        "docs/architecture.md",
+        "docs/implementation_scope.md",
+        "docs/pm-brief.md",
+        "docs/qa-checklist.md",
+        "docs/runbook.md",
+        "tests/eval/test_eval_smoke.py",
+        "tests/integration/test_metrics.py"
+      ]
+    },
+    {
+      "category": "tests",
+      "points": 2,
+      "max_points": 2,
+      "reason": "CI-ready test command",
+      "files": [
+        ".claude/skills/bmad-advanced-elicitation/SKILL.md",
+        ".claude/skills/bmad-agent-analyst/SKILL.md",
+        ".claude/skills/bmad-agent-analyst/customize.toml",
+        ".claude/skills/bmad-agent-architect/SKILL.md",
+        ".claude/skills/bmad-agent-architect/customize.toml",
+        ".claude/skills/bmad-agent-dev/SKILL.md",
+        ".claude/skills/bmad-agent-dev/customize.toml",
+        ".claude/skills/bmad-agent-pm/SKILL.md",
+        ".claude/skills/bmad-agent-pm/customize.toml",
+        ".claude/skills/bmad-agent-tech-writer/SKILL.md"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 3,
+      "max_points": 3,
+      "reason": "Docker or compose support",
+      "files": [
+        ".claude/skills/bmad-create-architecture/steps/step-03-starter.md",
+        ".claude/skills/bmad-create-architecture/steps/step-06-structure.md",
+        ".claude/skills/bmad-customize/SKILL.md",
+        ".claude/skills/bmad-document-project/workflows/full-scan-instructions.md",
+        ".claude/skills/bmad-technical-research/technical-steps/step-02-technical-overview.md",
+        ".claude/skills/bmad-validate-prd/steps-v/step-v-05-measurability-validation.md",
+        ".claude/skills/bmad-validate-prd/steps-v/step-v-07-implementation-leakage-validation.md",
+        "Dockerfile",
+        "README.md",
+        "docker-compose.yml"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 2,
+      "max_points": 2,
+      "reason": "structured logging/request tracing",
+      "files": [
+        ".claude/skills/bmad-check-implementation-readiness/SKILL.md",
+        ".claude/skills/bmad-check-implementation-readiness/steps/step-02-prd-analysis.md",
+        ".claude/skills/bmad-check-implementation-readiness/steps/step-03-epic-coverage-validation.md",
+        ".claude/skills/bmad-check-implementation-readiness/steps/step-05-epic-quality-review.md",
+        ".claude/skills/bmad-checkpoint-preview/step-02-walkthrough.md",
+        ".claude/skills/bmad-checkpoint-preview/step-03-detail-pass.md",
+        ".claude/skills/bmad-create-architecture/steps/step-04-decisions.md",
+        ".claude/skills/bmad-create-architecture/steps/step-05-patterns.md",
+        ".claude/skills/bmad-create-epics-and-stories/steps/step-01-validate-prerequisites.md",
+        ".claude/skills/bmad-create-prd/data/prd-purpose.md"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 2,
+      "max_points": 2,
+      "reason": "metrics",
+      "files": [
+        ".claude/skills/bmad-brainstorming/steps/step-01-session-setup.md",
+        ".claude/skills/bmad-brainstorming/steps/step-01b-continue.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02a-user-selected.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02b-ai-recommended.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02c-random-selection.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02d-progressive-flow.md",
+        ".claude/skills/bmad-brainstorming/steps/step-03-technique-execution.md",
+        ".claude/skills/bmad-brainstorming/steps/step-04-idea-organization.md",
+        ".claude/skills/bmad-check-implementation-readiness/steps/step-01-document-discovery.md",
+        ".claude/skills/bmad-check-implementation-readiness/steps/step-02-prd-analysis.md"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 2,
+      "max_points": 2,
+      "reason": "deployment/runbook",
+      "files": [
+        ".claude/skills/bmad-brainstorming/steps/step-02a-user-selected.md",
+        ".claude/skills/bmad-checkpoint-preview/step-03-detail-pass.md",
+        ".claude/skills/bmad-correct-course/SKILL.md",
+        ".claude/skills/bmad-correct-course/checklist.md",
+        ".claude/skills/bmad-create-architecture/steps/step-03-starter.md",
+        ".claude/skills/bmad-create-architecture/steps/step-04-decisions.md",
+        ".claude/skills/bmad-create-architecture/steps/step-06-structure.md",
+        ".claude/skills/bmad-create-epics-and-stories/steps/step-01-validate-prerequisites.md",
+        ".claude/skills/bmad-create-epics-and-stories/steps/step-02-design-epics.md",
+        ".claude/skills/bmad-create-story/SKILL.md"
+      ]
+    },
+    {
+      "category": "operations",
+      "points": 1,
+      "max_points": 1,
+      "reason": "rollback/fallback consideration",
+      "files": [
+        ".claude/skills/bmad-checkpoint-preview/step-01-orientation.md",
+        ".claude/skills/bmad-checkpoint-preview/step-02-walkthrough.md",
+        ".claude/skills/bmad-correct-course/SKILL.md",
+        ".claude/skills/bmad-correct-course/checklist.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-02-discovery.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-05-domain.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-06-innovation.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-07-project-type.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-10-nonfunctional.md",
+        ".claude/skills/bmad-create-story/SKILL.md"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 3,
+      "max_points": 3,
+      "reason": "module boundaries",
+      "files": [
+        "src/eval/cer.py",
+        "src/backends/registry.py",
+        "src/backends/base.py",
+        "src/api/main.py",
+        "src/audio/preprocessor.py",
+        "src/api/routes/transcribe.py",
+        "src/api/routes/__init__.py",
+        "src/config/settings.py",
+        "src/api/routes/health.py",
+        "src/eval/cer_runner.py"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 2,
+      "max_points": 2,
+      "reason": "configuration separation",
+      "files": [
+        ".claude/skills/bmad-advanced-elicitation/SKILL.md",
+        ".claude/skills/bmad-agent-analyst/SKILL.md",
+        ".claude/skills/bmad-agent-analyst/customize.toml",
+        ".claude/skills/bmad-agent-architect/SKILL.md",
+        ".claude/skills/bmad-agent-architect/customize.toml",
+        ".claude/skills/bmad-agent-dev/SKILL.md",
+        ".claude/skills/bmad-agent-dev/customize.toml",
+        ".claude/skills/bmad-agent-pm/SKILL.md",
+        ".claude/skills/bmad-agent-pm/customize.toml",
+        ".claude/skills/bmad-agent-tech-writer/SKILL.md"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 2,
+      "max_points": 2,
+      "reason": "dependency management",
+      "files": [
+        "requirements.txt"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 2,
+      "max_points": 2,
+      "reason": "basic code organization/simplicity",
+      "files": [
+        "src/eval/cer.py",
+        "tests/unit/test_cer.py",
+        "src/backends/registry.py",
+        "tests/__init__.py",
+        "src/backends/base.py",
+        ".claude/skills/bmad-customize/scripts/list_customizable_skills.py",
+        ".claude/skills/bmad-customize/scripts/tests/test_list_customizable_skills.py",
+        "src/api/main.py",
+        "src/audio/preprocessor.py",
+        "tests/integration/test_health.py"
+      ]
+    },
+    {
+      "category": "maintainability",
+      "points": 1,
+      "max_points": 1,
+      "reason": "model/vendor replacement path",
+      "files": [
+        ".claude/skills/bmad-create-architecture/steps/step-02-context.md",
+        ".claude/skills/bmad-create-architecture/steps/step-03-starter.md",
+        ".claude/skills/bmad-create-architecture/steps/step-06-structure.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-06-innovation.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-07-project-type.md",
+        ".claude/skills/bmad-document-project/templates/index-template.md",
+        ".claude/skills/bmad-document-project/workflows/full-scan-instructions.md",
+        ".claude/skills/bmad-validate-prd/steps-v/step-v-07-implementation-leakage-validation.md",
+        ".claude/skills/bmad-validate-prd/steps-v/step-v-09-project-type-validation.md",
+        ".env.example"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "architecture documentation",
+      "files": [
+        "docs/runbook.md",
+        "docs/architecture.md",
+        "README.md"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "eval protocol",
+      "files": [
+        ".claude/skills/bmad-agent-analyst/SKILL.md",
+        ".claude/skills/bmad-agent-analyst/customize.toml",
+        ".claude/skills/bmad-agent-architect/SKILL.md",
+        ".claude/skills/bmad-agent-architect/customize.toml",
+        ".claude/skills/bmad-agent-dev/SKILL.md",
+        ".claude/skills/bmad-agent-dev/customize.toml",
+        ".claude/skills/bmad-agent-pm/SKILL.md",
+        ".claude/skills/bmad-agent-pm/customize.toml",
+        ".claude/skills/bmad-agent-tech-writer/SKILL.md",
+        ".claude/skills/bmad-agent-tech-writer/customize.toml"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "API usage examples",
+      "files": [
+        ".claude/skills/bmad-agent-analyst/SKILL.md",
+        ".claude/skills/bmad-agent-architect/SKILL.md",
+        ".claude/skills/bmad-agent-dev/SKILL.md",
+        ".claude/skills/bmad-agent-pm/SKILL.md",
+        ".claude/skills/bmad-agent-tech-writer/SKILL.md",
+        ".claude/skills/bmad-agent-ux-designer/SKILL.md",
+        ".claude/skills/bmad-brainstorming/steps/step-02d-progressive-flow.md",
+        ".claude/skills/bmad-brainstorming/steps/step-03-technique-execution.md",
+        ".claude/skills/bmad-check-implementation-readiness/steps/step-01-document-discovery.md",
+        ".claude/skills/bmad-checkpoint-preview/step-04-testing.md"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "implementation scope documentation",
+      "files": [
+        ".claude/skills/bmad-create-epics-and-stories/steps/step-01-validate-prerequisites.md",
+        ".claude/skills/bmad-create-prd/steps-c/step-08-scoping.md",
+        ".claude/skills/bmad-customize/SKILL.md",
+        ".claude/skills/bmad-quick-dev/spec-template.md",
+        ".claude/skills/bmad-validate-prd/steps-v/step-v-02-format-detection.md",
+        ".claude/skills/bmad-validate-prd/steps-v/step-v-04-brief-coverage-validation.md",
+        "docs/implementation_scope.md",
+        "docs/pm-brief.md",
+        "src/backends/base.py"
+      ]
+    },
+    {
+      "category": "documentation",
+      "points": 1,
+      "max_points": 1,
+      "reason": "known limitations",
+      "files": [
+        ".claude/skills/bmad-check-implementation-readiness/SKILL.md",
+        ".claude/skills/bmad-check-implementation-readiness/steps/step-05-epic-quality-review.md",
+        ".claude/skills/bmad-create-architecture/steps/step-01b-continue.md",
+        ".claude/skills/bmad-create-epics-and-stories/SKILL.md",
+        ".claude/skills/bmad-create-prd/SKILL.md",
+        ".claude/skills/bmad-document-project/checklist.md",
+        ".claude/skills/bmad-document-project/templates/deep-dive-template.md",
+        ".claude/skills/bmad-document-project/workflows/deep-dive-instructions.md",
+        ".claude/skills/bmad-document-project/workflows/full-scan-instructions.md",
+        ".claude/skills/bmad-domain-research/domain-steps/step-02-domain-analysis.md"
+      ]
+    }
+  ],
+  "file_count_scanned": 307,
+  "label": "bmad",
+  "pytest": {
+    "available": true,
+    "passed": true,
+    "returncode": 0,
+    "command": "/home/beomgon/side/asr-pipeline-evaluator/outputs/bmad/.venv/bin/python -m pytest -q",
+    "stdout_tail": "......................................................................   [100%]\n70 passed in 0.49s\n",
+    "stderr_tail": "/home/beomgon/side/asr-pipeline-evaluator/outputs/bmad/.venv/lib/python3.8/site-packages/pytest_asyncio/plugin.py:208: PytestDeprecationWarning: The configuration option \"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+  }
+}
