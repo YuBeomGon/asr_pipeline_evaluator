@@ -1,0 +1,5 @@
+# Optional dependencies. The evaluator has stdlib fallbacks for core scoring.
+pyyaml>=6.0.0
+requests>=2.31.0
+jiwer>=3.0.0
+pytest>=7.0.0

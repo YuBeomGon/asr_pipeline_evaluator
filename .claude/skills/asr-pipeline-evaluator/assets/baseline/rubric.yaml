@@ -1,0 +1,9 @@
+weights:
+  functionality: 20
+  asr_pipeline_structure: 15
+  cer_evaluation: 15
+  serving_api_quality: 15
+  tests: 10
+  operations: 10
+  maintainability: 10
+  documentation: 5

@@ -1,0 +1,3 @@
+{"id":"sample_001","audio":"audio/sample_001.wav","reference":"hello world","hypothesis":"helo world"}
+{"id":"sample_002","audio":"audio/sample_002.wav","reference":"speech recognition serving","hypothesis":"speech recognition serving"}
+{"id":"sample_003","audio":"audio/sample_003.wav","reference":"character error rate","hypothesis":"character eror rate"}
